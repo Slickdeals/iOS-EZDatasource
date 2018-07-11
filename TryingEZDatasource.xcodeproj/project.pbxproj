@@ -8,24 +8,132 @@
 
 /* Begin PBXBuildFile section */
 		1A16C34620F66BE700616F51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C34520F66BE700616F51 /* AppDelegate.swift */; };
-		1A16C34820F66BE700616F51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C34720F66BE700616F51 /* ViewController.swift */; };
 		1A16C34B20F66BE700616F51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A16C34920F66BE700616F51 /* Main.storyboard */; };
 		1A16C34D20F66BE800616F51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A16C34C20F66BE800616F51 /* Assets.xcassets */; };
 		1A16C35020F66BE800616F51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A16C34E20F66BE800616F51 /* LaunchScreen.storyboard */; };
+		1A16C36020F66C1A00616F51 /* EZDatasources.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A16C35E20F66C1A00616F51 /* EZDatasources.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A16C36320F66C1A00616F51 /* EZDatasources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A16C35C20F66C1A00616F51 /* EZDatasources.framework */; };
+		1A16C36420F66C1A00616F51 /* EZDatasources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A16C35C20F66C1A00616F51 /* EZDatasources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1A16C38520F66D7200616F51 /* CellNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C36E20F66D7100616F51 /* CellNib.swift */; };
+		1A16C38620F66D7200616F51 /* CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37020F66D7100616F51 /* CollectionDataSource.swift */; };
+		1A16C38720F66D7200616F51 /* ArrayDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37220F66D7100616F51 /* ArrayDataProvider.swift */; };
+		1A16C38820F66D7200616F51 /* CollectionDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37320F66D7100616F51 /* CollectionDataProvider.swift */; };
+		1A16C38920F66D7200616F51 /* ArrayProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37420F66D7100616F51 /* ArrayProvider.swift */; };
+		1A16C38A20F66D7200616F51 /* CollectionArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37520F66D7100616F51 /* CollectionArrayDataSource.swift */; };
+		1A16C38B20F66D7200616F51 /* CompositeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37620F66D7100616F51 /* CompositeDatasource.swift */; };
+		1A16C38D20F66D7200616F51 /* ViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37920F66D7200616F51 /* ViewBuilder.swift */; };
+		1A16C38E20F66D7200616F51 /* ConfigurableCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37D20F66D7200616F51 /* ConfigurableCollectionReusableView.swift */; };
+		1A16C38F20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37E20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift */; };
+		1A16C39020F66D7200616F51 /* EZCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37F20F66D7200616F51 /* EZCell.swift */; };
+		1A16C39120F66D7200616F51 /* ConfigurableCell+DefaultConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C38020F66D7200616F51 /* ConfigurableCell+DefaultConfiguration.swift */; };
+		1A16C39220F66D7200616F51 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C38120F66D7200616F51 /* ConfigurableCell.swift */; };
+		1A16C39320F66D7200616F51 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C38220F66D7200616F51 /* ReusableCell.swift */; };
+		1A16C39420F66D7200616F51 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C38320F66D7200616F51 /* ConfigurableView.swift */; };
+		1A16C39520F66D7200616F51 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C38420F66D7200616F51 /* ReusableView.swift */; };
+		1A16C39820F66DA700616F51 /* EZCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C39720F66DA700616F51 /* EZCollectionViewCell.swift */; };
+		1A16C3A720F66FD700616F51 /* AwesomeWeaponModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A16C3A520F66FD700616F51 /* AwesomeWeaponModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A16C3AA20F66FD700616F51 /* AwesomeWeaponModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A16C3A320F66FD700616F51 /* AwesomeWeaponModel.framework */; };
+		1A16C3AB20F66FD700616F51 /* AwesomeWeaponModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A16C3A320F66FD700616F51 /* AwesomeWeaponModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1A16C3AF20F66FE400616F51 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C39920F66F1400616F51 /* Weapon.swift */; };
+		1A16C3B020F66FE600616F51 /* WeaponSmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C39C20F66F6000616F51 /* WeaponSmith.swift */; };
+		1A16C3B220F6700E00616F51 /* WeaponHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B120F6700E00616F51 /* WeaponHandler.swift */; };
+		1A16C3B420F6701B00616F51 /* Weapon+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B320F6701B00616F51 /* Weapon+Store.swift */; };
+		1A16C3B720F67DF800616F51 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B620F67DF800616F51 /* App.swift */; };
+		1AB2077E20F6BBD000FF66D0 /* Weapon+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2077D20F6BBD000FF66D0 /* Weapon+Cells.swift */; };
+		1AB2078020F6BBDD00FF66D0 /* Weapon+Datasources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2077F20F6BBDD00FF66D0 /* Weapon+Datasources.swift */; };
+		1AD5238D20F6C365006749D7 /* Weapon+Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5238C20F6C365006749D7 /* Weapon+Scenes.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A16C36120F66C1A00616F51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A16C33A20F66BE700616F51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A16C35B20F66C1A00616F51;
+			remoteInfo = EZDatasources;
+		};
+		1A16C3A820F66FD700616F51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A16C33A20F66BE700616F51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A16C3A220F66FD700616F51;
+			remoteInfo = AwesomeWeaponModel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1A16C36820F66C1B00616F51 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1A16C3AB20F66FD700616F51 /* AwesomeWeaponModel.framework in Embed Frameworks */,
+				1A16C36420F66C1A00616F51 /* EZDatasources.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1A16C34220F66BE700616F51 /* TryingEZDatasource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryingEZDatasource.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A16C34520F66BE700616F51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1A16C34720F66BE700616F51 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1A16C34A20F66BE700616F51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A16C34C20F66BE800616F51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A16C34F20F66BE800616F51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A16C35120F66BE800616F51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A16C35C20F66C1A00616F51 /* EZDatasources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZDatasources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A16C35E20F66C1A00616F51 /* EZDatasources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZDatasources.h; sourceTree = "<group>"; };
+		1A16C35F20F66C1A00616F51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A16C36E20F66D7100616F51 /* CellNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellNib.swift; sourceTree = "<group>"; };
+		1A16C37020F66D7100616F51 /* CollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDataSource.swift; sourceTree = "<group>"; };
+		1A16C37220F66D7100616F51 /* ArrayDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataProvider.swift; sourceTree = "<group>"; };
+		1A16C37320F66D7100616F51 /* CollectionDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDataProvider.swift; sourceTree = "<group>"; };
+		1A16C37420F66D7100616F51 /* ArrayProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayProvider.swift; sourceTree = "<group>"; };
+		1A16C37520F66D7100616F51 /* CollectionArrayDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionArrayDataSource.swift; sourceTree = "<group>"; };
+		1A16C37620F66D7100616F51 /* CompositeDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeDatasource.swift; sourceTree = "<group>"; };
+		1A16C37920F66D7200616F51 /* ViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBuilder.swift; sourceTree = "<group>"; };
+		1A16C37D20F66D7200616F51 /* ConfigurableCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableCollectionReusableView.swift; sourceTree = "<group>"; };
+		1A16C37E20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewVerticalFlowLayout.swift; sourceTree = "<group>"; };
+		1A16C37F20F66D7200616F51 /* EZCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZCell.swift; sourceTree = "<group>"; };
+		1A16C38020F66D7200616F51 /* ConfigurableCell+DefaultConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConfigurableCell+DefaultConfiguration.swift"; sourceTree = "<group>"; };
+		1A16C38120F66D7200616F51 /* ConfigurableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
+		1A16C38220F66D7200616F51 /* ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		1A16C38320F66D7200616F51 /* ConfigurableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
+		1A16C38420F66D7200616F51 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		1A16C39720F66DA700616F51 /* EZCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZCollectionViewCell.swift; sourceTree = "<group>"; };
+		1A16C39920F66F1400616F51 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		1A16C39C20F66F6000616F51 /* WeaponSmith.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponSmith.swift; sourceTree = "<group>"; };
+		1A16C3A320F66FD700616F51 /* AwesomeWeaponModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AwesomeWeaponModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A16C3A520F66FD700616F51 /* AwesomeWeaponModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AwesomeWeaponModel.h; sourceTree = "<group>"; };
+		1A16C3A620F66FD700616F51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A16C3B120F6700E00616F51 /* WeaponHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponHandler.swift; sourceTree = "<group>"; };
+		1A16C3B320F6701B00616F51 /* Weapon+Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Store.swift"; sourceTree = "<group>"; };
+		1A16C3B620F67DF800616F51 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		1AB2077D20F6BBD000FF66D0 /* Weapon+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Cells.swift"; sourceTree = "<group>"; };
+		1AB2077F20F6BBDD00FF66D0 /* Weapon+Datasources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Datasources.swift"; sourceTree = "<group>"; };
+		1AD5238C20F6C365006749D7 /* Weapon+Scenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Scenes.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		1A16C33F20F66BE700616F51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A16C3AA20F66FD700616F51 /* AwesomeWeaponModel.framework in Frameworks */,
+				1A16C36320F66C1A00616F51 /* EZDatasources.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A16C35820F66C1A00616F51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A16C39F20F66FD700616F51 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				1A16C34420F66BE700616F51 /* TryingEZDatasource */,
+				1A16C35D20F66C1A00616F51 /* EZDatasources */,
+				1A16C3A420F66FD700616F51 /* AwesomeWeaponModel */,
 				1A16C34320F66BE700616F51 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				1A16C34220F66BE700616F51 /* TryingEZDatasource.app */,
+				1A16C35C20F66C1A00616F51 /* EZDatasources.framework */,
+				1A16C3A320F66FD700616F51 /* AwesomeWeaponModel.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,17 +166,166 @@
 		1A16C34420F66BE700616F51 /* TryingEZDatasource */ = {
 			isa = PBXGroup;
 			children = (
-				1A16C34520F66BE700616F51 /* AppDelegate.swift */,
-				1A16C34720F66BE700616F51 /* ViewController.swift */,
+				1A16C3B820F67E3200616F51 /* App */,
 				1A16C34920F66BE700616F51 /* Main.storyboard */,
 				1A16C34C20F66BE800616F51 /* Assets.xcassets */,
 				1A16C34E20F66BE800616F51 /* LaunchScreen.storyboard */,
 				1A16C35120F66BE800616F51 /* Info.plist */,
+				1A16C36B20F66C7600616F51 /* Helpers */,
 			);
 			path = TryingEZDatasource;
 			sourceTree = "<group>";
 		};
+		1A16C35D20F66C1A00616F51 /* EZDatasources */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C39620F66D7A00616F51 /* EZCells */,
+				1A16C37A20F66D7200616F51 /* Behaviors */,
+				1A16C36D20F66D7100616F51 /* Data Structures */,
+				1A16C36F20F66D7100616F51 /* Datasource */,
+				1A16C37820F66D7200616F51 /* Helpers */,
+				1A16C35E20F66C1A00616F51 /* EZDatasources.h */,
+				1A16C35F20F66C1A00616F51 /* Info.plist */,
+			);
+			path = EZDatasources;
+			sourceTree = "<group>";
+		};
+		1A16C36B20F66C7600616F51 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C37920F66D7200616F51 /* ViewBuilder.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1A16C36D20F66D7100616F51 /* Data Structures */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C36E20F66D7100616F51 /* CellNib.swift */,
+			);
+			path = "Data Structures";
+			sourceTree = "<group>";
+		};
+		1A16C36F20F66D7100616F51 /* Datasource */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C37020F66D7100616F51 /* CollectionDataSource.swift */,
+				1A16C37120F66D7100616F51 /* Providers */,
+				1A16C37520F66D7100616F51 /* CollectionArrayDataSource.swift */,
+				1A16C37620F66D7100616F51 /* CompositeDatasource.swift */,
+			);
+			path = Datasource;
+			sourceTree = "<group>";
+		};
+		1A16C37120F66D7100616F51 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C37220F66D7100616F51 /* ArrayDataProvider.swift */,
+				1A16C37320F66D7100616F51 /* CollectionDataProvider.swift */,
+				1A16C37420F66D7100616F51 /* ArrayProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		1A16C37820F66D7200616F51 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1A16C37A20F66D7200616F51 /* Behaviors */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C37B20F66D7200616F51 /* Views */,
+			);
+			path = Behaviors;
+			sourceTree = "<group>";
+		};
+		1A16C37B20F66D7200616F51 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C37C20F66D7200616F51 /* CollectionView */,
+				1A16C38020F66D7200616F51 /* ConfigurableCell+DefaultConfiguration.swift */,
+				1A16C38120F66D7200616F51 /* ConfigurableCell.swift */,
+				1A16C38220F66D7200616F51 /* ReusableCell.swift */,
+				1A16C38320F66D7200616F51 /* ConfigurableView.swift */,
+				1A16C38420F66D7200616F51 /* ReusableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1A16C37C20F66D7200616F51 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C37D20F66D7200616F51 /* ConfigurableCollectionReusableView.swift */,
+				1A16C37E20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift */,
+				1A16C37F20F66D7200616F51 /* EZCell.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		1A16C39620F66D7A00616F51 /* EZCells */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C39720F66DA700616F51 /* EZCollectionViewCell.swift */,
+			);
+			path = EZCells;
+			sourceTree = "<group>";
+		};
+		1A16C3A420F66FD700616F51 /* AwesomeWeaponModel */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C3A520F66FD700616F51 /* AwesomeWeaponModel.h */,
+				1A16C3A620F66FD700616F51 /* Info.plist */,
+				1A16C39920F66F1400616F51 /* Weapon.swift */,
+				1A16C3B320F6701B00616F51 /* Weapon+Store.swift */,
+				1A16C3B120F6700E00616F51 /* WeaponHandler.swift */,
+				1A16C39C20F66F6000616F51 /* WeaponSmith.swift */,
+			);
+			path = AwesomeWeaponModel;
+			sourceTree = "<group>";
+		};
+		1A16C3B820F67E3200616F51 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1AB2077C20F6BBC100FF66D0 /* Weapons */,
+				1A16C3B620F67DF800616F51 /* App.swift */,
+				1A16C34520F66BE700616F51 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1AB2077C20F6BBC100FF66D0 /* Weapons */ = {
+			isa = PBXGroup;
+			children = (
+				1AB2077D20F6BBD000FF66D0 /* Weapon+Cells.swift */,
+				1AB2077F20F6BBDD00FF66D0 /* Weapon+Datasources.swift */,
+				1AD5238C20F6C365006749D7 /* Weapon+Scenes.swift */,
+			);
+			path = Weapons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1A16C35920F66C1A00616F51 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A16C36020F66C1A00616F51 /* EZDatasources.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A16C3A020F66FD700616F51 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A16C3A720F66FD700616F51 /* AwesomeWeaponModel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		1A16C34120F66BE700616F51 /* TryingEZDatasource */ = {
@@ -74,15 +335,54 @@
 				1A16C33E20F66BE700616F51 /* Sources */,
 				1A16C33F20F66BE700616F51 /* Frameworks */,
 				1A16C34020F66BE700616F51 /* Resources */,
+				1A16C36820F66C1B00616F51 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1A16C36220F66C1A00616F51 /* PBXTargetDependency */,
+				1A16C3A920F66FD700616F51 /* PBXTargetDependency */,
 			);
 			name = TryingEZDatasource;
 			productName = TryingEZDatasource;
 			productReference = 1A16C34220F66BE700616F51 /* TryingEZDatasource.app */;
 			productType = "com.apple.product-type.application";
+		};
+		1A16C35B20F66C1A00616F51 /* EZDatasources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A16C36520F66C1B00616F51 /* Build configuration list for PBXNativeTarget "EZDatasources" */;
+			buildPhases = (
+				1A16C35720F66C1A00616F51 /* Sources */,
+				1A16C35820F66C1A00616F51 /* Frameworks */,
+				1A16C35920F66C1A00616F51 /* Headers */,
+				1A16C35A20F66C1A00616F51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EZDatasources;
+			productName = EZDatasources;
+			productReference = 1A16C35C20F66C1A00616F51 /* EZDatasources.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1A16C3A220F66FD700616F51 /* AwesomeWeaponModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A16C3AC20F66FD700616F51 /* Build configuration list for PBXNativeTarget "AwesomeWeaponModel" */;
+			buildPhases = (
+				1A16C39E20F66FD700616F51 /* Sources */,
+				1A16C39F20F66FD700616F51 /* Frameworks */,
+				1A16C3A020F66FD700616F51 /* Headers */,
+				1A16C3A120F66FD700616F51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AwesomeWeaponModel;
+			productName = AwesomeWeaponModel;
+			productReference = 1A16C3A320F66FD700616F51 /* AwesomeWeaponModel.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -95,6 +395,13 @@
 				ORGANIZATIONNAME = "Dominic Rodriquez";
 				TargetAttributes = {
 					1A16C34120F66BE700616F51 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					1A16C35B20F66C1A00616F51 = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
+					1A16C3A220F66FD700616F51 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
@@ -113,6 +420,8 @@
 			projectRoot = "";
 			targets = (
 				1A16C34120F66BE700616F51 /* TryingEZDatasource */,
+				1A16C35B20F66C1A00616F51 /* EZDatasources */,
+				1A16C3A220F66FD700616F51 /* AwesomeWeaponModel */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +437,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1A16C35A20F66C1A00616F51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A16C3A120F66FD700616F51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -135,12 +458,63 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A16C34820F66BE700616F51 /* ViewController.swift in Sources */,
+				1A16C3B720F67DF800616F51 /* App.swift in Sources */,
+				1AB2077E20F6BBD000FF66D0 /* Weapon+Cells.swift in Sources */,
+				1AD5238D20F6C365006749D7 /* Weapon+Scenes.swift in Sources */,
+				1AB2078020F6BBDD00FF66D0 /* Weapon+Datasources.swift in Sources */,
 				1A16C34620F66BE700616F51 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1A16C35720F66C1A00616F51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A16C38820F66D7200616F51 /* CollectionDataProvider.swift in Sources */,
+				1A16C39520F66D7200616F51 /* ReusableView.swift in Sources */,
+				1A16C38620F66D7200616F51 /* CollectionDataSource.swift in Sources */,
+				1A16C38F20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift in Sources */,
+				1A16C38E20F66D7200616F51 /* ConfigurableCollectionReusableView.swift in Sources */,
+				1A16C38A20F66D7200616F51 /* CollectionArrayDataSource.swift in Sources */,
+				1A16C39320F66D7200616F51 /* ReusableCell.swift in Sources */,
+				1A16C39820F66DA700616F51 /* EZCollectionViewCell.swift in Sources */,
+				1A16C38720F66D7200616F51 /* ArrayDataProvider.swift in Sources */,
+				1A16C39020F66D7200616F51 /* EZCell.swift in Sources */,
+				1A16C39120F66D7200616F51 /* ConfigurableCell+DefaultConfiguration.swift in Sources */,
+				1A16C38B20F66D7200616F51 /* CompositeDatasource.swift in Sources */,
+				1A16C38D20F66D7200616F51 /* ViewBuilder.swift in Sources */,
+				1A16C39220F66D7200616F51 /* ConfigurableCell.swift in Sources */,
+				1A16C39420F66D7200616F51 /* ConfigurableView.swift in Sources */,
+				1A16C38520F66D7200616F51 /* CellNib.swift in Sources */,
+				1A16C38920F66D7200616F51 /* ArrayProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A16C39E20F66FD700616F51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A16C3AF20F66FE400616F51 /* Weapon.swift in Sources */,
+				1A16C3B220F6700E00616F51 /* WeaponHandler.swift in Sources */,
+				1A16C3B020F66FE600616F51 /* WeaponSmith.swift in Sources */,
+				1A16C3B420F6701B00616F51 /* Weapon+Store.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A16C36220F66C1A00616F51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A16C35B20F66C1A00616F51 /* EZDatasources */;
+			targetProxy = 1A16C36120F66C1A00616F51 /* PBXContainerItemProxy */;
+		};
+		1A16C3A920F66FD700616F51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A16C3A220F66FD700616F51 /* AwesomeWeaponModel */;
+			targetProxy = 1A16C3A820F66FD700616F51 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1A16C34920F66BE700616F51 /* Main.storyboard */ = {
@@ -279,6 +653,7 @@
 		1A16C35520F66BE800616F51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26NVJ229DV;
@@ -297,6 +672,7 @@
 		1A16C35620F66BE800616F51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26NVJ229DV;
@@ -309,6 +685,121 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1A16C36620F66C1B00616F51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 26NVJ229DV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = EZDatasources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dom.EZDatasources.EZDatasources;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1A16C36720F66C1B00616F51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 26NVJ229DV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = EZDatasources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dom.EZDatasources.EZDatasources;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1A16C3AD20F66FD700616F51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 26NVJ229DV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AwesomeWeaponModel/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dom.AwesomeWeaponModel.AwesomeWeaponModel;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1A16C3AE20F66FD700616F51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 26NVJ229DV;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AwesomeWeaponModel/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dom.AwesomeWeaponModel.AwesomeWeaponModel;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -329,6 +820,24 @@
 			buildConfigurations = (
 				1A16C35520F66BE800616F51 /* Debug */,
 				1A16C35620F66BE800616F51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A16C36520F66C1B00616F51 /* Build configuration list for PBXNativeTarget "EZDatasources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A16C36620F66C1B00616F51 /* Debug */,
+				1A16C36720F66C1B00616F51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A16C3AC20F66FD700616F51 /* Build configuration list for PBXNativeTarget "AwesomeWeaponModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A16C3AD20F66FD700616F51 /* Debug */,
+				1A16C3AE20F66FD700616F51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
