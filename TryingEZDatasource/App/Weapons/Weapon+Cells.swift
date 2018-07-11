@@ -71,13 +71,11 @@ class WeaponCell: EZActionableModelDrivenCollectionViewCell<Weapon, WeaponIntera
     
     override func setup(for model: Weapon?, at indexPath: IndexPath?, with actionDelegate: WeaponInteractionHandler?) {
         super.setup(for: model, at: indexPath, with: actionDelegate)
-        print("setting up")
         contentView.backgroundColor = UIColor.orange
         if let model = model { levelLabel.text = "\(model.name): \(model.level)" }
         guard !subviews.contains(upgradeButton) else { return }
         contentView.addSubview(upgradeButton)
         contentView.addSubview(levelLabel)
-        print("adding subview")
         upgradeButton.addTarget(self, action: #selector(self.tappedUpgrade), for: .touchUpInside)
         
     }

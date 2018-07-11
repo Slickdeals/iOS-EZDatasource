@@ -42,6 +42,8 @@
 		1AB2077E20F6BBD000FF66D0 /* Weapon+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2077D20F6BBD000FF66D0 /* Weapon+Cells.swift */; };
 		1AB2078020F6BBDD00FF66D0 /* Weapon+Datasources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2077F20F6BBDD00FF66D0 /* Weapon+Datasources.swift */; };
 		1AD5238D20F6C365006749D7 /* Weapon+Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5238C20F6C365006749D7 /* Weapon+Scenes.swift */; };
+		1AD5239120F6C47F006749D7 /* Weapon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD5239020F6C47F006749D7 /* Weapon.storyboard */; };
+		1AD5239320F6C4EF006749D7 /* Launchpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5239220F6C4EF006749D7 /* Launchpad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,8 @@
 		1AB2077D20F6BBD000FF66D0 /* Weapon+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Cells.swift"; sourceTree = "<group>"; };
 		1AB2077F20F6BBDD00FF66D0 /* Weapon+Datasources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Datasources.swift"; sourceTree = "<group>"; };
 		1AD5238C20F6C365006749D7 /* Weapon+Scenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Scenes.swift"; sourceTree = "<group>"; };
+		1AD5239020F6C47F006749D7 /* Weapon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weapon.storyboard; sourceTree = "<group>"; };
+		1AD5239220F6C4EF006749D7 /* Launchpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launchpad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				1A16C3B820F67E3200616F51 /* App */,
+				1AD5239220F6C4EF006749D7 /* Launchpad.swift */,
 				1A16C34920F66BE700616F51 /* Main.storyboard */,
 				1A16C34C20F66BE800616F51 /* Assets.xcassets */,
 				1A16C34E20F66BE800616F51 /* LaunchScreen.storyboard */,
@@ -302,6 +307,7 @@
 				1AB2077D20F6BBD000FF66D0 /* Weapon+Cells.swift */,
 				1AB2077F20F6BBDD00FF66D0 /* Weapon+Datasources.swift */,
 				1AD5238C20F6C365006749D7 /* Weapon+Scenes.swift */,
+				1AD5239020F6C47F006749D7 /* Weapon.storyboard */,
 			);
 			path = Weapons;
 			sourceTree = "<group>";
@@ -433,6 +439,7 @@
 			files = (
 				1A16C35020F66BE800616F51 /* LaunchScreen.storyboard in Resources */,
 				1A16C34D20F66BE800616F51 /* Assets.xcassets in Resources */,
+				1AD5239120F6C47F006749D7 /* Weapon.storyboard in Resources */,
 				1A16C34B20F66BE700616F51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD5239320F6C4EF006749D7 /* Launchpad.swift in Sources */,
 				1A16C3B720F67DF800616F51 /* App.swift in Sources */,
 				1AB2077E20F6BBD000FF66D0 /* Weapon+Cells.swift in Sources */,
 				1AD5238D20F6C365006749D7 /* Weapon+Scenes.swift in Sources */,
