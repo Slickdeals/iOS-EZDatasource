@@ -54,6 +54,11 @@ import UIKit
 
 // I have to implement the fetch given some request
 
+public protocol ArrayProviderSubcriber {
+    associatedtype ProviderModel
+    func didReceiveUpdate<Provider: ArrayProvider>(for provider: Provider, thatSays providerIs: ProviderStatus) where Provider.ItemType == ProviderModel
+}
+
 public protocol ArrayProvider: class, CollectionDataProvider where Self.ItemType == Self.Model {
     
     associatedtype ItemType

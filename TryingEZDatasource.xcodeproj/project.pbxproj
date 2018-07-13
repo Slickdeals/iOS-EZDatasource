@@ -41,6 +41,8 @@
 		1A16C3B720F67DF800616F51 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B620F67DF800616F51 /* App.swift */; };
 		1AB2077E20F6BBD000FF66D0 /* Weapon+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2077D20F6BBD000FF66D0 /* Weapon+Cells.swift */; };
 		1AB2078020F6BBDD00FF66D0 /* Weapon+Datasources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2077F20F6BBDD00FF66D0 /* Weapon+Datasources.swift */; };
+		1AC723D720F91A210001C70F /* OriginalBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC723D620F91A210001C70F /* OriginalBroker.swift */; };
+		1ACE710C20F7F715009AD16E /* EventBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACE710B20F7F715009AD16E /* EventBroker.swift */; };
 		1AD5238D20F6C365006749D7 /* Weapon+Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5238C20F6C365006749D7 /* Weapon+Scenes.swift */; };
 		1AD5239120F6C47F006749D7 /* Weapon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD5239020F6C47F006749D7 /* Weapon.storyboard */; };
 		1AD5239320F6C4EF006749D7 /* Launchpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5239220F6C4EF006749D7 /* Launchpad.swift */; };
@@ -115,6 +117,8 @@
 		1A16C3B620F67DF800616F51 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		1AB2077D20F6BBD000FF66D0 /* Weapon+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Cells.swift"; sourceTree = "<group>"; };
 		1AB2077F20F6BBDD00FF66D0 /* Weapon+Datasources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Datasources.swift"; sourceTree = "<group>"; };
+		1AC723D620F91A210001C70F /* OriginalBroker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalBroker.swift; sourceTree = "<group>"; };
+		1ACE710B20F7F715009AD16E /* EventBroker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBroker.swift; sourceTree = "<group>"; };
 		1AD5238C20F6C365006749D7 /* Weapon+Scenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Scenes.swift"; sourceTree = "<group>"; };
 		1AD5239020F6C47F006749D7 /* Weapon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weapon.storyboard; sourceTree = "<group>"; };
 		1AD5239220F6C4EF006749D7 /* Launchpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launchpad.swift; sourceTree = "<group>"; };
@@ -170,13 +174,11 @@
 		1A16C34420F66BE700616F51 /* TryingEZDatasource */ = {
 			isa = PBXGroup;
 			children = (
+				1AD5239420F6CA18006749D7 /* Support */,
 				1A16C3B820F67E3200616F51 /* App */,
 				1AD5239220F6C4EF006749D7 /* Launchpad.swift */,
 				1A16C34920F66BE700616F51 /* Main.storyboard */,
-				1A16C34C20F66BE800616F51 /* Assets.xcassets */,
 				1A16C34E20F66BE800616F51 /* LaunchScreen.storyboard */,
-				1A16C35120F66BE800616F51 /* Info.plist */,
-				1A16C36B20F66C7600616F51 /* Helpers */,
 			);
 			path = TryingEZDatasource;
 			sourceTree = "<group>";
@@ -188,9 +190,10 @@
 				1A16C37A20F66D7200616F51 /* Behaviors */,
 				1A16C36D20F66D7100616F51 /* Data Structures */,
 				1A16C36F20F66D7100616F51 /* Datasource */,
-				1A16C37820F66D7200616F51 /* Helpers */,
 				1A16C35E20F66C1A00616F51 /* EZDatasources.h */,
 				1A16C35F20F66C1A00616F51 /* Info.plist */,
+				1ACE710B20F7F715009AD16E /* EventBroker.swift */,
+				1AC723D620F91A210001C70F /* OriginalBroker.swift */,
 			);
 			path = EZDatasources;
 			sourceTree = "<group>";
@@ -230,13 +233,6 @@
 				1A16C37420F66D7100616F51 /* ArrayProvider.swift */,
 			);
 			path = Providers;
-			sourceTree = "<group>";
-		};
-		1A16C37820F66D7200616F51 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		1A16C37A20F66D7200616F51 /* Behaviors */ = {
@@ -294,9 +290,8 @@
 		1A16C3B820F67E3200616F51 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				1AB2077C20F6BBC100FF66D0 /* Weapons */,
 				1A16C3B620F67DF800616F51 /* App.swift */,
-				1A16C34520F66BE700616F51 /* AppDelegate.swift */,
+				1AB2077C20F6BBC100FF66D0 /* Weapons */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -310,6 +305,17 @@
 				1AD5239020F6C47F006749D7 /* Weapon.storyboard */,
 			);
 			path = Weapons;
+			sourceTree = "<group>";
+		};
+		1AD5239420F6CA18006749D7 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C34520F66BE700616F51 /* AppDelegate.swift */,
+				1A16C34C20F66BE800616F51 /* Assets.xcassets */,
+				1A16C35120F66BE800616F51 /* Info.plist */,
+				1A16C36B20F66C7600616F51 /* Helpers */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,6 +486,7 @@
 			files = (
 				1A16C38820F66D7200616F51 /* CollectionDataProvider.swift in Sources */,
 				1A16C39520F66D7200616F51 /* ReusableView.swift in Sources */,
+				1AC723D720F91A210001C70F /* OriginalBroker.swift in Sources */,
 				1A16C38620F66D7200616F51 /* CollectionDataSource.swift in Sources */,
 				1A16C38F20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift in Sources */,
 				1A16C38E20F66D7200616F51 /* ConfigurableCollectionReusableView.swift in Sources */,
@@ -495,6 +502,7 @@
 				1A16C39420F66D7200616F51 /* ConfigurableView.swift in Sources */,
 				1A16C38520F66D7200616F51 /* CellNib.swift in Sources */,
 				1A16C38920F66D7200616F51 /* ArrayProvider.swift in Sources */,
+				1ACE710C20F7F715009AD16E /* EventBroker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,7 +673,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26NVJ229DV;
-				INFOPLIST_FILE = TryingEZDatasource/Info.plist;
+				INFOPLIST_FILE = TryingEZDatasource/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -684,7 +692,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26NVJ229DV;
-				INFOPLIST_FILE = TryingEZDatasource/Info.plist;
+				INFOPLIST_FILE = TryingEZDatasource/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

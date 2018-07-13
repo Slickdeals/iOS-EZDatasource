@@ -4,6 +4,13 @@
 
 import UIKit
 
+public enum ProviderStatus {
+    case goingToFetchSomeData
+    case allDoneFetchingData
+    case didUpdateItems(atIndexPaths: [IndexPath])
+    case didUpdateAllItems
+}
+
 public protocol CollectionDataProvider {
     associatedtype Model
     
