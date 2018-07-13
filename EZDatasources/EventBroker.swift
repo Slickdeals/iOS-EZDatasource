@@ -8,39 +8,44 @@
 
 import Foundation
 
-public typealias EventHandler = (String, [AnyHashable : Any]) -> Void
+public typealias GeneralEventData = [AnyHashable : Any]
+public typealias GeneralSubscriberCollection = [String : [ExplicitSubscriberAction<GeneralEventData>]]
+public typealias GeneralEventHandler = (String, GeneralEventData) -> Void
 
-public typealias SubscribedEvents = [String : [SubscriberAction]]
-
-public struct SubscriberAction {
+public struct ExplicitSubscriberAction<EventData> {
+    public typealias EventHandler = (String, EventData) -> Void
     public var subscriber: AnyHashable
     public var handler: EventHandler
 }
 
-public protocol EventBroker {
+public protocol EventBroker: ExplicitEventBroker where EventData == GeneralEventData {}
+public protocol ExplicitEventBroker {
     
-    var subscribedEvents: SubscribedEvents { get set }
+    associatedtype EventData
+    typealias Subscriber = ExplicitSubscriberAction<EventData>
     
-    func publish(event: String, with eventInfo: [AnyHashable : Any])
+    var subscribedEvents: [String: [Subscriber]] { get set }
     
-    mutating func subscribe(to event: String, subscriber: AnyHashable, with handler: @escaping EventHandler)
+    func publish(event: String, with eventInfo: EventData)
+    
+    mutating func subscribe(to event: String, subscriber: AnyHashable, with handler: @escaping Subscriber.EventHandler)
     
     mutating func unsubscribe(to event: String, subscriber: AnyHashable)
 }
 
-public extension EventBroker {
+public extension ExplicitEventBroker {
     
-    public func publish(event: String, with eventInfo: [AnyHashable : Any]) {
+    public func publish(event: String, with eventInfo: EventData) {
         guard let subscriberActions = subscribedEvents[event] else { return }
         for subscriberAction in subscriberActions {
             subscriberAction.handler(event, eventInfo)
         }
     }
     
-    public mutating func subscribe(to event: String, subscriber: AnyHashable, with handler: @escaping EventHandler) {
-        let subscriberAction = SubscriberAction(subscriber: subscriber, handler: handler)
-        var subscriberActions: [SubscriberAction]
-        if let _subscriberActions: [SubscriberAction] = subscribedEvents[event]  {
+    public mutating func subscribe(to event: String, subscriber: AnyHashable, with handler: @escaping Subscriber.EventHandler) {
+        let subscriberAction = ExplicitSubscriberAction(subscriber: subscriber, handler: handler)
+        var subscriberActions: [Subscriber]
+        if let _subscriberActions: [ExplicitSubscriberAction] = subscribedEvents[event]  {
             subscriberActions = _subscriberActions
         } else {
             subscriberActions = [subscriberAction]
@@ -61,3 +66,4 @@ public extension EventBroker {
         subscribedEvents[event] = subscriberActions
     }
 }
+
