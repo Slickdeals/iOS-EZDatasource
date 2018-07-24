@@ -17,10 +17,3 @@ public protocol EZView: class {
     var delegate: Delegate? { get set }
     func setup(for model: Model?, at indexPath: IndexPath?, with actionDelegate: Delegate?)
 }
-
-extension EZView {
-//    func setup(for model: Model?, at indexPath: IndexPath?, with actionDelegate: Delegate?) {
-//        self.model = model
-//        self.delegate = actionDelegate
-//    }
-}

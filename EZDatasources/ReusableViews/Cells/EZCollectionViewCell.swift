@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 open class EZActionableCollectionViewCell<ActionDelegate>: UICollectionViewCell, EZCell {
     public typealias Model = EZEmptyModel
     public typealias Delegate = ActionDelegate

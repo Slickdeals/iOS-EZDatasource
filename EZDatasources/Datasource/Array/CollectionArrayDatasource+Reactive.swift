@@ -24,11 +24,6 @@ open class CollectionArrayReactiveDatasource<Model, Cell: UICollectionViewCell>:
         super.init(collectionView: collectionView, provider: provider, cellDelegate: cellDelegate)
     }
     
-//    public convenience init(collectionView: UICollectionView,
-//                            provider: ReactiveArrayDataProvider<Model> = ReactiveArrayDataProvider<Model>(),cellDelegate: Cell.Delegate? = nil) {
-//        self.init(collectionView: collectionView, array: provider.items, cellDelegate: cellDelegate)
-//    }
-    
     public required init(collectionView: UICollectionView, array: [[Model]] = [], cellDelegate: Cell.Delegate? = nil) {
         let provider = ReactiveArrayDataProvider<Model>()
         super.init(collectionView: collectionView, provider: provider, cellDelegate: cellDelegate)
@@ -41,19 +36,12 @@ open class CollectionArrayReactiveDatasource<Model, Cell: UICollectionViewCell>:
     
     open func updateItem(at indexPath: IndexPath, value: Model) {
         provider.updateItem(at: indexPath, value: value)
-        collectionView.reloadItems(at: [indexPath])
-    }
-    
-    open func reload(with items: [[Model]]) {
-        provider.items = items
+        DispatchQueue.main.async { self.collectionView.reloadItems(at: [indexPath]) }
     }
     
     open func reload(with items: [Model]) {
-        reload(with: [items])
+        provider.publish(event: ProviderEvent.didCompleteLoading.rawValue, with: items)
     }
 }
 
-open class EZCollectionArrayReactiveDatasource<Provider: ExplicitEventBroker & CollectionDataProvider, Cell: EZCell>: CollectionArrayReactiveDatasource<Cell.Model, Cell> where Cell: UICollectionViewCell {
-    
-
-}
+open class EZCollectionArrayReactiveDatasource<Provider: ExplicitEventBroker & CollectionDataProvider, Cell: EZCell>: CollectionArrayReactiveDatasource<Cell.Model, Cell> where Cell: UICollectionViewCell {}

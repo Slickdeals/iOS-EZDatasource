@@ -61,10 +61,6 @@ where Cell: EZCell, Provider.Model == Cell.Model, Provider.EventData == Provider
         super.init(collectionView: collectionView, provider: provider, cellDelegate: cellDelegate)
     }
     
-//    public func loadItem(at indexPath: IndexPath) {
-//        provider.loadItem(at: indexPath)
-//    }
-    
     public func loadAll() {
         provider.loadAll()
     }

@@ -24,7 +24,6 @@ open class CompositeDataSource: NSObject, UICollectionViewDataSource, UICollecti
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return (0..<sources.count).reduce(0) { totalSections, datasourceIndex in
             return sources[datasourceIndex].numberOfSections!(in: collectionView) + totalSections
-            //return datasource.numberOfSections!(in: collectionView) + totalSections
         }
 
     }
@@ -33,9 +32,6 @@ open class CompositeDataSource: NSObject, UICollectionViewDataSource, UICollecti
         let datasourceSection = section - sectionOffset(for: section, in: collectionView)
         let itemsInSection = sources[section].collectionView(collectionView, numberOfItemsInSection: datasourceSection)
         return itemsInSection
-//        return (0..<sources[section].numberOfSections!(in: collectionView)).reduce(0) { totalSections, section in
-//            return sources[section].collectionView(collectionView, numberOfItemsInSection: section) + totalSections
-//        }
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

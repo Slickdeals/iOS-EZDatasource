@@ -23,7 +23,6 @@
 		1A16C38B20F66D7200616F51 /* CompositeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37620F66D7100616F51 /* CompositeDatasource.swift */; };
 		1A16C38D20F66D7200616F51 /* ViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37920F66D7200616F51 /* ViewBuilder.swift */; };
 		1A16C38E20F66D7200616F51 /* ConfigurableCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37D20F66D7200616F51 /* ConfigurableCollectionReusableView.swift */; };
-		1A16C38F20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37E20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift */; };
 		1A16C39020F66D7200616F51 /* EZCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37F20F66D7200616F51 /* EZCell.swift */; };
 		1A16C39120F66D7200616F51 /* ConfigurableCell+DefaultConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C38020F66D7200616F51 /* ConfigurableCell+DefaultConfiguration.swift */; };
 		1A16C39220F66D7200616F51 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C38120F66D7200616F51 /* ConfigurableCell.swift */; };
@@ -39,7 +38,7 @@
 		1A16C3B220F6700E00616F51 /* WeaponHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B120F6700E00616F51 /* WeaponHandler.swift */; };
 		1A16C3B420F6701B00616F51 /* Weapon+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B320F6701B00616F51 /* Weapon+Store.swift */; };
 		1A16C3B720F67DF800616F51 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B620F67DF800616F51 /* App.swift */; };
-		1A34312C20FE4F4900F4D6D9 /* ReactiveArrayDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A34312B20FE4F4900F4D6D9 /* ReactiveArrayDataProvider.swift */; };
+		1A34312C20FE4F4900F4D6D9 /* ArrayDataProvider+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A34312B20FE4F4900F4D6D9 /* ArrayDataProvider+Reactive.swift */; };
 		1A34312E20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A34312D20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift */; };
 		1AB2077E20F6BBD000FF66D0 /* Weapon+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2077D20F6BBD000FF66D0 /* Weapon+Cells.swift */; };
 		1AB2078020F6BBDD00FF66D0 /* Weapon+Datasources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2077F20F6BBDD00FF66D0 /* Weapon+Datasources.swift */; };
@@ -50,6 +49,7 @@
 		1AD5238D20F6C365006749D7 /* Weapon+Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5238C20F6C365006749D7 /* Weapon+Scenes.swift */; };
 		1AD5239120F6C47F006749D7 /* Weapon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD5239020F6C47F006749D7 /* Weapon.storyboard */; };
 		1AD5239320F6C4EF006749D7 /* Launchpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5239220F6C4EF006749D7 /* Launchpad.swift */; };
+		1AFDB0DB2107A0B100169BC7 /* CollectionViewVerticalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37E20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,7 +119,7 @@
 		1A16C3B120F6700E00616F51 /* WeaponHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponHandler.swift; sourceTree = "<group>"; };
 		1A16C3B320F6701B00616F51 /* Weapon+Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Store.swift"; sourceTree = "<group>"; };
 		1A16C3B620F67DF800616F51 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		1A34312B20FE4F4900F4D6D9 /* ReactiveArrayDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveArrayDataProvider.swift; sourceTree = "<group>"; };
+		1A34312B20FE4F4900F4D6D9 /* ArrayDataProvider+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrayDataProvider+Reactive.swift"; sourceTree = "<group>"; };
 		1A34312D20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionDatasource+Reactive.swift"; sourceTree = "<group>"; };
 		1AB2077D20F6BBD000FF66D0 /* Weapon+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Cells.swift"; sourceTree = "<group>"; };
 		1AB2077F20F6BBDD00FF66D0 /* Weapon+Datasources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Datasources.swift"; sourceTree = "<group>"; };
@@ -183,6 +183,7 @@
 		1A16C34420F66BE700616F51 /* TryingEZDatasource */ = {
 			isa = PBXGroup;
 			children = (
+				1A16C37E20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift */,
 				1AD5239420F6CA18006749D7 /* Support */,
 				1A16C3B820F67E3200616F51 /* App */,
 				1AD5239220F6C4EF006749D7 /* Launchpad.swift */,
@@ -195,14 +196,13 @@
 		1A16C35D20F66C1A00616F51 /* EZDatasources */ = {
 			isa = PBXGroup;
 			children = (
-				1A16C39620F66D7A00616F51 /* Cells */,
-				1A16C37A20F66D7200616F51 /* Behaviors */,
-				1A16C36D20F66D7100616F51 /* Data Structures */,
+				1AFDB0D521079FB300169BC7 /* Providers */,
 				1A16C36F20F66D7100616F51 /* Datasource */,
+				1AFDB0D621079FC600169BC7 /* Events */,
+				1AFDB0D721079FD600169BC7 /* ReusableViews */,
+				1A16C36D20F66D7100616F51 /* Data Structures */,
 				1A16C35E20F66C1A00616F51 /* EZDatasources.h */,
 				1A16C35F20F66C1A00616F51 /* Info.plist */,
-				1ACE710B20F7F715009AD16E /* EventBroker.swift */,
-				1AC723D820F939BD0001C70F /* GenericEventBroker.swift */,
 			);
 			path = EZDatasources;
 			sourceTree = "<group>";
@@ -226,62 +226,22 @@
 		1A16C36F20F66D7100616F51 /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
-				1A16C37120F66D7100616F51 /* Providers */,
 				1A16C37020F66D7100616F51 /* CollectionDataSource.swift */,
 				1A34312D20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift */,
-				1A16C37520F66D7100616F51 /* CollectionArrayDataSource.swift */,
-				1AC723DA20F942330001C70F /* CollectionArrayDatasource+Reactive.swift */,
 				1A16C37620F66D7100616F51 /* CompositeDatasource.swift */,
+				1AFDB0DA2107A02100169BC7 /* Array */,
 			);
 			path = Datasource;
-			sourceTree = "<group>";
-		};
-		1A16C37120F66D7100616F51 /* Providers */ = {
-			isa = PBXGroup;
-			children = (
-				1A16C37320F66D7100616F51 /* CollectionDataProvider.swift */,
-				1A16C37420F66D7100616F51 /* ArrayProvider.swift */,
-				1A16C37220F66D7100616F51 /* ArrayDataProvider.swift */,
-				1A34312B20FE4F4900F4D6D9 /* ReactiveArrayDataProvider.swift */,
-			);
-			path = Providers;
-			sourceTree = "<group>";
-		};
-		1A16C37A20F66D7200616F51 /* Behaviors */ = {
-			isa = PBXGroup;
-			children = (
-				1A16C37B20F66D7200616F51 /* Views */,
-			);
-			path = Behaviors;
-			sourceTree = "<group>";
-		};
-		1A16C37B20F66D7200616F51 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				1A16C37C20F66D7200616F51 /* CollectionView */,
-				1A16C38020F66D7200616F51 /* ConfigurableCell+DefaultConfiguration.swift */,
-				1A16C38120F66D7200616F51 /* ConfigurableCell.swift */,
-				1A16C38220F66D7200616F51 /* ReusableCell.swift */,
-				1A16C38320F66D7200616F51 /* ConfigurableView.swift */,
-				1A16C38420F66D7200616F51 /* ReusableView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		1A16C37C20F66D7200616F51 /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				1A16C37D20F66D7200616F51 /* ConfigurableCollectionReusableView.swift */,
-				1A16C37E20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift */,
-				1A16C37F20F66D7200616F51 /* EZCell.swift */,
-			);
-			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		1A16C39620F66D7A00616F51 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				1A16C38220F66D7200616F51 /* ReusableCell.swift */,
+				1A16C38120F66D7200616F51 /* ConfigurableCell.swift */,
+				1A16C37F20F66D7200616F51 /* EZCell.swift */,
 				1A16C39720F66DA700616F51 /* EZCollectionViewCell.swift */,
+				1A16C38020F66D7200616F51 /* ConfigurableCell+DefaultConfiguration.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -335,6 +295,54 @@
 				1A16C36B20F66C7600616F51 /* Helpers */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		1AFDB0D521079FB300169BC7 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C37320F66D7100616F51 /* CollectionDataProvider.swift */,
+				1AFDB0D92107A01800169BC7 /* Array */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		1AFDB0D621079FC600169BC7 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				1ACE710B20F7F715009AD16E /* EventBroker.swift */,
+				1AC723D820F939BD0001C70F /* GenericEventBroker.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		1AFDB0D721079FD600169BC7 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C38420F66D7200616F51 /* ReusableView.swift */,
+				1A16C38320F66D7200616F51 /* ConfigurableView.swift */,
+				1A16C37D20F66D7200616F51 /* ConfigurableCollectionReusableView.swift */,
+				1A16C39620F66D7A00616F51 /* Cells */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		1AFDB0D92107A01800169BC7 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C37420F66D7100616F51 /* ArrayProvider.swift */,
+				1A16C37220F66D7100616F51 /* ArrayDataProvider.swift */,
+				1A34312B20FE4F4900F4D6D9 /* ArrayDataProvider+Reactive.swift */,
+			);
+			path = Array;
+			sourceTree = "<group>";
+		};
+		1AFDB0DA2107A02100169BC7 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				1A16C37520F66D7100616F51 /* CollectionArrayDataSource.swift */,
+				1AC723DA20F942330001C70F /* CollectionArrayDatasource+Reactive.swift */,
+			);
+			path = Array;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +499,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AD5239320F6C4EF006749D7 /* Launchpad.swift in Sources */,
+				1AFDB0DB2107A0B100169BC7 /* CollectionViewVerticalFlowLayout.swift in Sources */,
 				1A16C3B720F67DF800616F51 /* App.swift in Sources */,
 				1AB2077E20F6BBD000FF66D0 /* Weapon+Cells.swift in Sources */,
 				1AD5238D20F6C365006749D7 /* Weapon+Scenes.swift in Sources */,
@@ -507,7 +516,6 @@
 				1A16C38820F66D7200616F51 /* CollectionDataProvider.swift in Sources */,
 				1A16C39520F66D7200616F51 /* ReusableView.swift in Sources */,
 				1A16C38620F66D7200616F51 /* CollectionDataSource.swift in Sources */,
-				1A16C38F20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift in Sources */,
 				1A16C38E20F66D7200616F51 /* ConfigurableCollectionReusableView.swift in Sources */,
 				1A16C38A20F66D7200616F51 /* CollectionArrayDataSource.swift in Sources */,
 				1A34312E20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift in Sources */,
@@ -521,7 +529,7 @@
 				1A16C38D20F66D7200616F51 /* ViewBuilder.swift in Sources */,
 				1A16C39220F66D7200616F51 /* ConfigurableCell.swift in Sources */,
 				1A16C39420F66D7200616F51 /* ConfigurableView.swift in Sources */,
-				1A34312C20FE4F4900F4D6D9 /* ReactiveArrayDataProvider.swift in Sources */,
+				1A34312C20FE4F4900F4D6D9 /* ArrayDataProvider+Reactive.swift in Sources */,
 				1A16C38520F66D7200616F51 /* CellNib.swift in Sources */,
 				1A16C38920F66D7200616F51 /* ArrayProvider.swift in Sources */,
 				1ACE710C20F7F715009AD16E /* EventBroker.swift in Sources */,

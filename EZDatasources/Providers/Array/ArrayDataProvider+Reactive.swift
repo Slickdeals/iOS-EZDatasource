@@ -1,5 +1,5 @@
 //
-//  ReactiveArrayDataProvider.swift
+//  ArrayDataProvider+Reactive.swift
 //  EZDatasources
 //
 //  Created by Dominic Rodriquez on 7/17/18.
