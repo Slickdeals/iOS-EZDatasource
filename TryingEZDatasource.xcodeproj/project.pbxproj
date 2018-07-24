@@ -49,7 +49,7 @@
 		1AD5238D20F6C365006749D7 /* Weapon+Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5238C20F6C365006749D7 /* Weapon+Scenes.swift */; };
 		1AD5239120F6C47F006749D7 /* Weapon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD5239020F6C47F006749D7 /* Weapon.storyboard */; };
 		1AD5239320F6C4EF006749D7 /* Launchpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5239220F6C4EF006749D7 /* Launchpad.swift */; };
-		1AFDB0DB2107A0B100169BC7 /* CollectionViewVerticalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37E20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift */; };
+		1AFDB0DC2107A3D300169BC7 /* CollectionViewVerticalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37E20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,7 +183,6 @@
 		1A16C34420F66BE700616F51 /* TryingEZDatasource */ = {
 			isa = PBXGroup;
 			children = (
-				1A16C37E20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift */,
 				1AD5239420F6CA18006749D7 /* Support */,
 				1A16C3B820F67E3200616F51 /* App */,
 				1AD5239220F6C4EF006749D7 /* Launchpad.swift */,
@@ -210,6 +209,7 @@
 		1A16C36B20F66C7600616F51 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				1A16C37E20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift */,
 				1A16C37920F66D7200616F51 /* ViewBuilder.swift */,
 			);
 			path = Helpers;
@@ -499,7 +499,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AD5239320F6C4EF006749D7 /* Launchpad.swift in Sources */,
-				1AFDB0DB2107A0B100169BC7 /* CollectionViewVerticalFlowLayout.swift in Sources */,
 				1A16C3B720F67DF800616F51 /* App.swift in Sources */,
 				1AB2077E20F6BBD000FF66D0 /* Weapon+Cells.swift in Sources */,
 				1AD5238D20F6C365006749D7 /* Weapon+Scenes.swift in Sources */,
@@ -514,6 +513,7 @@
 			files = (
 				1AC723DB20F942330001C70F /* CollectionArrayDatasource+Reactive.swift in Sources */,
 				1A16C38820F66D7200616F51 /* CollectionDataProvider.swift in Sources */,
+				1AFDB0DC2107A3D300169BC7 /* CollectionViewVerticalFlowLayout.swift in Sources */,
 				1A16C39520F66D7200616F51 /* ReusableView.swift in Sources */,
 				1A16C38620F66D7200616F51 /* CollectionDataSource.swift in Sources */,
 				1A16C38E20F66D7200616F51 /* ConfigurableCollectionReusableView.swift in Sources */,
