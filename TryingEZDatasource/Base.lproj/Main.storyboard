@@ -19,48 +19,74 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cx-n7-DRj">
-                                <rect key="frame" x="0.0" y="20" width="375" height="511"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="437"/>
                                 <connections>
                                     <segue destination="YeA-WK-J36" kind="embed" id="iib-jA-kAX"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-n9-FGi">
-                                <rect key="frame" x="16" y="579" width="120" height="30"/>
-                                <state key="normal" title="RandomWeapons"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3Nv-bh-Imr">
+                                <rect key="frame" x="10" y="457" width="229" height="210"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdB-Kd-Gvl">
+                                        <rect key="frame" x="0.0" y="0.0" width="229" height="30"/>
+                                        <state key="normal" title="Not Actionable, Not Model Driven"/>
+                                        <connections>
+                                            <action selector="didTapNotActionableNotModelDriven:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jin-eI-ZUL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaq-Z3-msE">
+                                        <rect key="frame" x="29" y="45" width="200" height="30"/>
+                                        <state key="normal" title="Actionable, Not Model Driven"/>
+                                        <connections>
+                                            <action selector="didTapActionableNotModelDriven:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ouv-ib-xHo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUG-n9-FGi">
+                                        <rect key="frame" x="29" y="90" width="200" height="30"/>
+                                        <state key="normal" title="Not Actionable, Model Driven"/>
+                                        <connections>
+                                            <action selector="didTapNotActionableModelDriven:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5fx-6A-c58"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEV-fK-xId">
+                                        <rect key="frame" x="47" y="135" width="182" height="30"/>
+                                        <state key="normal" title="Actionable &amp; Model Driven"/>
+                                        <connections>
+                                            <action selector="didTapActionableReactiveModelDriven:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QvF-KD-wcB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTA-oN-al8" userLabel="All The Things">
+                                        <rect key="frame" x="15" y="180" width="214" height="30"/>
+                                        <state key="normal" title="Literally everything in the world"/>
+                                        <connections>
+                                            <action selector="didTapAllTheThings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HrH-lj-nDu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmX-Rt-gJO">
+                                <rect key="frame" x="305" y="532" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="j9s-GD-bM5"/>
+                                    <constraint firstAttribute="width" constant="60" id="ypd-F8-T3r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <state key="normal" title="↺"/>
                                 <connections>
-                                    <action selector="didTapRandomWeapons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PgT-8W-YDG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEV-fK-xId">
-                                <rect key="frame" x="16" y="617" width="136" height="30"/>
-                                <state key="normal" title="InteractiveWeapons"/>
-                                <connections>
-                                    <action selector="didTapInteractiveWeapons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qfp-xM-i4d"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdB-Kd-Gvl">
-                                <rect key="frame" x="16" y="541" width="82" height="30"/>
-                                <state key="normal" title="WeaponInfo"/>
-                                <connections>
-                                    <action selector="didTapWeaponInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b5z-Ce-ei2"/>
+                                    <action selector="didTapRefresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HhQ-hr-f09"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PdB-Kd-Gvl" secondAttribute="trailing" constant="277" id="0iX-gP-clS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rUG-n9-FGi" secondAttribute="trailing" constant="239" id="2s3-bg-MNw"/>
-                            <constraint firstItem="PdB-Kd-Gvl" firstAttribute="top" secondItem="5cx-n7-DRj" secondAttribute="bottom" constant="10" id="3pC-EE-fx0"/>
-                            <constraint firstItem="jEV-fK-xId" firstAttribute="top" secondItem="rUG-n9-FGi" secondAttribute="bottom" constant="8" id="4PM-gM-u3P"/>
-                            <constraint firstItem="jEV-fK-xId" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ALQ-qf-FPs"/>
-                            <constraint firstItem="rUG-n9-FGi" firstAttribute="top" secondItem="PdB-Kd-Gvl" secondAttribute="bottom" constant="8" id="LDy-sU-86C"/>
+                            <constraint firstItem="3Nv-bh-Imr" firstAttribute="top" secondItem="5cx-n7-DRj" secondAttribute="bottom" id="E63-Cr-cP5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5cx-n7-DRj" secondAttribute="trailing" id="N78-kd-2HP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hmX-Rt-gJO" secondAttribute="trailing" constant="10" id="Ob5-3H-nY3"/>
                             <constraint firstItem="5cx-n7-DRj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P7M-IY-kXH"/>
                             <constraint firstItem="5cx-n7-DRj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S8O-Aa-zj7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jEV-fK-xId" secondAttribute="trailing" constant="223" id="Yco-iY-TIu"/>
-                            <constraint firstItem="PdB-Kd-Gvl" firstAttribute="leading" secondItem="rUG-n9-FGi" secondAttribute="leading" id="dLA-bX-5zh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jEV-fK-xId" secondAttribute="bottom" constant="20" id="r8r-cL-BjZ"/>
-                            <constraint firstItem="rUG-n9-FGi" firstAttribute="leading" secondItem="jEV-fK-xId" secondAttribute="leading" id="sEz-k0-XBF"/>
+                            <constraint firstItem="3Nv-bh-Imr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="kQf-0l-bgX"/>
+                            <constraint firstItem="hmX-Rt-gJO" firstAttribute="centerY" secondItem="3Nv-bh-Imr" secondAttribute="centerY" id="vT0-8Z-azd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3Nv-bh-Imr" secondAttribute="bottom" id="vbH-RQ-U4a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

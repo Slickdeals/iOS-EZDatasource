@@ -9,5 +9,13 @@
 import Foundation
 
 public protocol WeaponInteractionHandler {
-    func didRequestWeaponUpgrade(for weapon: Weapon)
+    func didRequestWeaponUpgrade(for weapon: Weapon, at indexPath: IndexPath?)
+    func didRerollWeapon(at indexPath: IndexPath?, to weapon: Weapon)
+}
+
+public extension WeaponInteractionHandler {
+    public func didRerollWeapon(at indexPath: IndexPath?, to weapon: Weapon) {
+        guard let index = indexPath else { return }
+        WeaponStore.AvailableWeapons[index.item] = weapon
+    }
 }

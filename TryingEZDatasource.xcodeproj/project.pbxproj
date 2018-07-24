@@ -39,9 +39,13 @@
 		1A16C3B220F6700E00616F51 /* WeaponHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B120F6700E00616F51 /* WeaponHandler.swift */; };
 		1A16C3B420F6701B00616F51 /* Weapon+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B320F6701B00616F51 /* Weapon+Store.swift */; };
 		1A16C3B720F67DF800616F51 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B620F67DF800616F51 /* App.swift */; };
+		1A34312C20FE4F4900F4D6D9 /* ReactiveArrayDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A34312B20FE4F4900F4D6D9 /* ReactiveArrayDataProvider.swift */; };
+		1A34312E20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A34312D20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift */; };
 		1AB2077E20F6BBD000FF66D0 /* Weapon+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2077D20F6BBD000FF66D0 /* Weapon+Cells.swift */; };
 		1AB2078020F6BBDD00FF66D0 /* Weapon+Datasources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2077F20F6BBDD00FF66D0 /* Weapon+Datasources.swift */; };
-		1AC723D720F91A210001C70F /* OriginalBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC723D620F91A210001C70F /* OriginalBroker.swift */; };
+		1AC723D920F939BD0001C70F /* GenericEventBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC723D820F939BD0001C70F /* GenericEventBroker.swift */; };
+		1AC723DB20F942330001C70F /* CollectionArrayDatasource+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC723DA20F942330001C70F /* CollectionArrayDatasource+Reactive.swift */; };
+		1AC723DD20F9472D0001C70F /* EZDatasources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A16C35C20F66C1A00616F51 /* EZDatasources.framework */; };
 		1ACE710C20F7F715009AD16E /* EventBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACE710B20F7F715009AD16E /* EventBroker.swift */; };
 		1AD5238D20F6C365006749D7 /* Weapon+Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5238C20F6C365006749D7 /* Weapon+Scenes.swift */; };
 		1AD5239120F6C47F006749D7 /* Weapon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD5239020F6C47F006749D7 /* Weapon.storyboard */; };
@@ -115,9 +119,12 @@
 		1A16C3B120F6700E00616F51 /* WeaponHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponHandler.swift; sourceTree = "<group>"; };
 		1A16C3B320F6701B00616F51 /* Weapon+Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Store.swift"; sourceTree = "<group>"; };
 		1A16C3B620F67DF800616F51 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		1A34312B20FE4F4900F4D6D9 /* ReactiveArrayDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveArrayDataProvider.swift; sourceTree = "<group>"; };
+		1A34312D20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionDatasource+Reactive.swift"; sourceTree = "<group>"; };
 		1AB2077D20F6BBD000FF66D0 /* Weapon+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Cells.swift"; sourceTree = "<group>"; };
 		1AB2077F20F6BBDD00FF66D0 /* Weapon+Datasources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Datasources.swift"; sourceTree = "<group>"; };
-		1AC723D620F91A210001C70F /* OriginalBroker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginalBroker.swift; sourceTree = "<group>"; };
+		1AC723D820F939BD0001C70F /* GenericEventBroker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericEventBroker.swift; sourceTree = "<group>"; };
+		1AC723DA20F942330001C70F /* CollectionArrayDatasource+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionArrayDatasource+Reactive.swift"; sourceTree = "<group>"; };
 		1ACE710B20F7F715009AD16E /* EventBroker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBroker.swift; sourceTree = "<group>"; };
 		1AD5238C20F6C365006749D7 /* Weapon+Scenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Scenes.swift"; sourceTree = "<group>"; };
 		1AD5239020F6C47F006749D7 /* Weapon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weapon.storyboard; sourceTree = "<group>"; };
@@ -145,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC723DD20F9472D0001C70F /* EZDatasources.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +166,7 @@
 				1A16C35D20F66C1A00616F51 /* EZDatasources */,
 				1A16C3A420F66FD700616F51 /* AwesomeWeaponModel */,
 				1A16C34320F66BE700616F51 /* Products */,
+				1AC723DC20F9472D0001C70F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,14 +195,14 @@
 		1A16C35D20F66C1A00616F51 /* EZDatasources */ = {
 			isa = PBXGroup;
 			children = (
-				1A16C39620F66D7A00616F51 /* EZCells */,
+				1A16C39620F66D7A00616F51 /* Cells */,
 				1A16C37A20F66D7200616F51 /* Behaviors */,
 				1A16C36D20F66D7100616F51 /* Data Structures */,
 				1A16C36F20F66D7100616F51 /* Datasource */,
 				1A16C35E20F66C1A00616F51 /* EZDatasources.h */,
 				1A16C35F20F66C1A00616F51 /* Info.plist */,
 				1ACE710B20F7F715009AD16E /* EventBroker.swift */,
-				1AC723D620F91A210001C70F /* OriginalBroker.swift */,
+				1AC723D820F939BD0001C70F /* GenericEventBroker.swift */,
 			);
 			path = EZDatasources;
 			sourceTree = "<group>";
@@ -217,9 +226,11 @@
 		1A16C36F20F66D7100616F51 /* Datasource */ = {
 			isa = PBXGroup;
 			children = (
-				1A16C37020F66D7100616F51 /* CollectionDataSource.swift */,
 				1A16C37120F66D7100616F51 /* Providers */,
+				1A16C37020F66D7100616F51 /* CollectionDataSource.swift */,
+				1A34312D20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift */,
 				1A16C37520F66D7100616F51 /* CollectionArrayDataSource.swift */,
+				1AC723DA20F942330001C70F /* CollectionArrayDatasource+Reactive.swift */,
 				1A16C37620F66D7100616F51 /* CompositeDatasource.swift */,
 			);
 			path = Datasource;
@@ -228,9 +239,10 @@
 		1A16C37120F66D7100616F51 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
-				1A16C37220F66D7100616F51 /* ArrayDataProvider.swift */,
 				1A16C37320F66D7100616F51 /* CollectionDataProvider.swift */,
 				1A16C37420F66D7100616F51 /* ArrayProvider.swift */,
+				1A16C37220F66D7100616F51 /* ArrayDataProvider.swift */,
+				1A34312B20FE4F4900F4D6D9 /* ReactiveArrayDataProvider.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -266,12 +278,12 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
-		1A16C39620F66D7A00616F51 /* EZCells */ = {
+		1A16C39620F66D7A00616F51 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				1A16C39720F66DA700616F51 /* EZCollectionViewCell.swift */,
 			);
-			path = EZCells;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		1A16C3A420F66FD700616F51 /* AwesomeWeaponModel */ = {
@@ -305,6 +317,13 @@
 				1AD5239020F6C47F006749D7 /* Weapon.storyboard */,
 			);
 			path = Weapons;
+			sourceTree = "<group>";
+		};
+		1AC723DC20F9472D0001C70F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		1AD5239420F6CA18006749D7 /* Support */ = {
@@ -484,22 +503,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AC723DB20F942330001C70F /* CollectionArrayDatasource+Reactive.swift in Sources */,
 				1A16C38820F66D7200616F51 /* CollectionDataProvider.swift in Sources */,
 				1A16C39520F66D7200616F51 /* ReusableView.swift in Sources */,
-				1AC723D720F91A210001C70F /* OriginalBroker.swift in Sources */,
 				1A16C38620F66D7200616F51 /* CollectionDataSource.swift in Sources */,
 				1A16C38F20F66D7200616F51 /* CollectionViewVerticalFlowLayout.swift in Sources */,
 				1A16C38E20F66D7200616F51 /* ConfigurableCollectionReusableView.swift in Sources */,
 				1A16C38A20F66D7200616F51 /* CollectionArrayDataSource.swift in Sources */,
+				1A34312E20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift in Sources */,
 				1A16C39320F66D7200616F51 /* ReusableCell.swift in Sources */,
 				1A16C39820F66DA700616F51 /* EZCollectionViewCell.swift in Sources */,
 				1A16C38720F66D7200616F51 /* ArrayDataProvider.swift in Sources */,
 				1A16C39020F66D7200616F51 /* EZCell.swift in Sources */,
 				1A16C39120F66D7200616F51 /* ConfigurableCell+DefaultConfiguration.swift in Sources */,
 				1A16C38B20F66D7200616F51 /* CompositeDatasource.swift in Sources */,
+				1AC723D920F939BD0001C70F /* GenericEventBroker.swift in Sources */,
 				1A16C38D20F66D7200616F51 /* ViewBuilder.swift in Sources */,
 				1A16C39220F66D7200616F51 /* ConfigurableCell.swift in Sources */,
 				1A16C39420F66D7200616F51 /* ConfigurableView.swift in Sources */,
+				1A34312C20FE4F4900F4D6D9 /* ReactiveArrayDataProvider.swift in Sources */,
 				1A16C38520F66D7200616F51 /* CellNib.swift in Sources */,
 				1A16C38920F66D7200616F51 /* ArrayProvider.swift in Sources */,
 				1ACE710C20F7F715009AD16E /* EventBroker.swift in Sources */,

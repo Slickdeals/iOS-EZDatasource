@@ -26,16 +26,33 @@ import AwesomeWeaponModel
  cell that combines both of the other cases
  
  *************************************/
-class RandomWeaponCell: EZActionableCollectionViewCell<WeaponInteractionHandler> {
+class RandomWeaponCell: EZCollectionViewCell {
     
     var randomWeapon: Weapon = WeaponStore.randomWeapon
+    var indexPath: IndexPath? = nil
+    lazy var weaponLabel: UILabel = { return ViewBuilder.buildLevel(size: self.contentView.bounds.size) }()
+    
+    override func setup(at indexPath: IndexPath?) {
+        super.setup(at: indexPath)
+        contentView.backgroundColor = UIColor.green
+        weaponLabel.text = "\(randomWeapon.name)"
+        guard !subviews.contains(weaponLabel) else { return }
+        contentView.addSubview(weaponLabel)
+    }
+}
+
+class RandomRerollableWeaponCell: EZActionableCollectionViewCell<WeaponInteractionHandler> {
+    
+    var randomWeapon: Weapon = WeaponStore.randomWeapon
+    var indexPath: IndexPath? = nil
     lazy var refreshWeaponButton: UIButton = { return ViewBuilder.buildButton() }()
     lazy var weaponLabel: UILabel = { return ViewBuilder.buildLevel(size: self.contentView.bounds.size) }()
     
-    override func setup(with actionDelegate: WeaponInteractionHandler?) {
+    override func setup(with actionDelegate: WeaponInteractionHandler?, at indexPath: IndexPath?) {
         print("setting up")
-        super.setup(with: actionDelegate)
-        contentView.backgroundColor = UIColor.orange
+        self.indexPath = indexPath
+        super.setup(with: actionDelegate, at: indexPath)
+        contentView.backgroundColor = UIColor.lightGray
         weaponLabel.text = "\(randomWeapon.name)"
         guard !subviews.contains(refreshWeaponButton) else { return }
         contentView.addSubview(refreshWeaponButton)
@@ -46,18 +63,19 @@ class RandomWeaponCell: EZActionableCollectionViewCell<WeaponInteractionHandler>
     
     @objc func tappedRerollWeapon() {
         randomWeapon = WeaponStore.randomWeapon
-        delegate?.didRequestWeaponUpgrade(for: randomWeapon)
+        setup(with: delegate, at: indexPath)
+        delegate?.didRerollWeapon(at: indexPath, to: randomWeapon)
     }
 }
 
 class WeaponInfoCell: EZModelDrivenCollectionViewCell<Weapon> {
-    
+
     lazy var levelLabel: UILabel = { return ViewBuilder.buildLevel(size: self.contentView.bounds.size) }()
-    
+
     override func setup(for model: Model?, at indexPath: IndexPath?) {
         print("setting up")
         super.setup(for: model, at: indexPath)
-        contentView.backgroundColor = UIColor.orange
+        contentView.backgroundColor = UIColor.cyan
         if let model = model { levelLabel.text = "\(model.name): \(model.level)" }
         guard !subviews.contains(levelLabel) else { return }
         contentView.addSubview(levelLabel)
@@ -65,23 +83,25 @@ class WeaponInfoCell: EZModelDrivenCollectionViewCell<Weapon> {
 }
 
 class WeaponCell: EZActionableModelDrivenCollectionViewCell<Weapon, WeaponInteractionHandler> {
-    
+
     lazy var upgradeButton: UIButton = { return ViewBuilder.buildButton() }()
     lazy var levelLabel: UILabel = { return ViewBuilder.buildLevel(size: self.contentView.bounds.size) }()
+    var indexPath: IndexPath? = nil
     
     override func setup(for model: Weapon?, at indexPath: IndexPath?, with actionDelegate: WeaponInteractionHandler?) {
         super.setup(for: model, at: indexPath, with: actionDelegate)
+        self.indexPath = indexPath
         contentView.backgroundColor = UIColor.orange
         if let model = model { levelLabel.text = "\(model.name): \(model.level)" }
         guard !subviews.contains(upgradeButton) else { return }
         contentView.addSubview(upgradeButton)
         contentView.addSubview(levelLabel)
         upgradeButton.addTarget(self, action: #selector(self.tappedUpgrade), for: .touchUpInside)
-        
+
     }
-    
+
     @objc func tappedUpgrade() {
         guard let weapon = model else { return }
-        delegate?.didRequestWeaponUpgrade(for: weapon)
+        delegate?.didRequestWeaponUpgrade(for: weapon, at: indexPath!)
     }
 }

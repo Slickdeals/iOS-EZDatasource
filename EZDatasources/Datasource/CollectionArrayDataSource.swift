@@ -5,6 +5,9 @@
 
 import UIKit
 
+//open class ReactiveCollectionArrayDatasource<Model, Cell: UICollectionViewCell>:
+//    Collection
+
 open class CollectionArrayDataSource<Model, Cell: UICollectionViewCell>: CollectionDataSource<ArrayDataProvider<Model>, Cell>
     where Cell: EZCell, Cell.Model == Model
 {
@@ -14,8 +17,8 @@ open class CollectionArrayDataSource<Model, Cell: UICollectionViewCell>: Collect
         self.init(collectionView: collectionView, array: [array], cellDelegate: cellDelegate)
     }
     
-    public init(collectionView: UICollectionView, array: [[Model]] = [], cellDelegate: Cell.Delegate? = nil) {
-        let provider = ArrayDataProvider(array: array)
+    public required init(collectionView: UICollectionView, array: [[Model]] = [], cellDelegate: Cell.Delegate? = nil) {
+        let provider = ArrayDataProvider<Model>(array: array)
         super.init(collectionView: collectionView, provider: provider, cellDelegate: cellDelegate)
     }
     

@@ -15,32 +15,54 @@ import AwesomeWeaponModel
  Three different view controllers, each of which displays one of the cells created above
  ***************************************************************************************************************/
 class WeaponsVC : UIViewController {
-        lazy var collectionView: UICollectionView = { return ViewBuilder.collectionView(frame: view.bounds) }()
-        var weaponDatasource: WeaponDataSource!
-        let weaponSmith = WeaponSmith()
-        override func viewDidAppear(_ animated: Bool) {
-            weaponDatasource = WeaponDataSource(collectionView: self.collectionView, array: WeaponStore.AvailableWeapons)
-            weaponDatasource.cellDelegate = weaponSmith
-            view.addSubview(collectionView)
-        }
-}
-
-class WeaponInfoVC : UIViewController {
-    lazy var collectionView: UICollectionView = { return ViewBuilder.collectionView(frame: view.bounds) }()
-    var weaponInfoDatasource: WeaponInfoDatasource!
-    override func viewDidAppear(_ animated: Bool) {
-        weaponInfoDatasource = WeaponInfoDatasource(collectionView: self.collectionView, array: WeaponStore.AvailableWeapons)
-        view.addSubview(collectionView)
-    }
-}
-
-class RandomWeaponVC : UIViewController {
-    lazy var collectionView: UICollectionView = { return ViewBuilder.collectionView(frame: view.bounds) }()
-    var randomWeaponDatasource: RandomWeaponDatasource!
+    
+    let subscriberID: String = UUID().uuidString
+    
+    lazy var collectionView: UICollectionView = {
+        return ViewBuilder.collectionView(frame: view.bounds) 
+    }()
+    
     let weaponSmith = WeaponSmith()
+    func handleAppEvent(eventName: String) {
+        guard let appEvent = App.Event(rawValue: eventName) else { return }
+        switch appEvent {
+        case .didSelectNoActionNoModelDatasource:
+            App.randomWeaponDatasource = RandomWeaponsDatasource(
+                collectionView: self.collectionView,
+                array: [[]])
+        case .didSelectActionNoModelDatasource:
+            App.randomWeaponDatasourceWithRerollAction = RandomRerollableWeaponsDatasource(
+                collectionView: self.collectionView,
+                array: [[]],
+                cellDelegate: nil)
+        case .didSelectNoActionModelDatasource:
+            App.weaponInfoDatasource = WeaponInfoDatasource(
+                collectionView: self.collectionView,
+                array: [WeaponStore.AvailableWeapons])
+        case .didSelectActionAndActionReactiveDatasource:
+            App.reactiveWeaponDatasource = ReactiveWeaponDatasource(
+                collectionView: collectionView,
+                provider: WeaponStore.weaponProvider,
+                cellDelegate: weaponSmith)
+        case .didSelectAllTheThings:
+            App.weaponCollectionDatasource = App.generateCombinedDatasource()
+            self.collectionView.dataSource = App.weaponCollectionDatasource
+            self.collectionView.delegate = App.weaponCollectionDatasource
+            self.collectionView.reloadData()
+        }
+        DispatchQueue.main.async { self.collectionView.reloadData() }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        App.Event.AllEvents.forEach {
+            App.sharedInstance.subscribe(to: $0, subscriber: subscriberID, with: handleAppEvent)
+        }
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
-        print("appeared")
-        randomWeaponDatasource = RandomWeaponDatasource(collectionView: self.collectionView, array: [[]], cellDelegate: weaponSmith)
         view.addSubview(collectionView)
+        App.reactiveWeaponDatasource?.loadAll()
     }
 }

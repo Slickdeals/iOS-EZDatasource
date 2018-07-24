@@ -29,49 +29,66 @@ import UIKit
 //    associatedtype RequestPayload: APIRequestPayload
 //    associatedtype ResponsePayload: APIResponsePayload
 //    associatedtype ParsedModel: ComposableFromPayload where ParsedModel.Payload == ResponsePayload.Payload
-//    
+//
 //    typealias ResponseHandler = (ResponsePayload) -> Void
-//    
+//
 //    func fetch(with request: RequestPayload)
-//    
+//
 //    func handleRequest(with payload: RequestPayload, completion: ResponseHandler)
 //}
 //
 //public extension APIModelRetriever {
-//    
+//
 //    public func fetch(with request: RequestPayload) {
 //        handleRequest(with: request) { responsePayload in
 //            do {
-//                let model = try ParsedModel.init//(payload: responsePayload)
+//                let model = try ParsedModel(payload: responsePayload)
+//                // publish received data
 //            }
 //            catch let error {
 //                print(error)
 //            }
 //        }
 //    }
-//    
 //}
 
 // I have to implement the fetch given some request
 
-public protocol ArrayProviderSubcriber {
-    associatedtype ProviderModel
-    func didReceiveUpdate<Provider: ArrayProvider>(for provider: Provider, thatSays providerIs: ProviderStatus) where Provider.ItemType == ProviderModel
+// if I had a protocol that was an arrayProvider
+// I am an arrayProvider where self Loadable
+
+public enum ProviderError: Error {
+    case noNetworkConnection
+    case timeout
+    case noImplementationProvided
+    
+    var message: String {
+        switch self {
+        case .noImplementationProvided:
+            return "\(self): override and implement the fetch methods in order to use them"
+        case .timeout:
+            return "\(self): Received a timeout after giving it a go a few times"
+        case .noNetworkConnection:
+            return "\(self): no network man, fix that shit"
+        }
+    }
 }
 
-public protocol ArrayProvider: class, CollectionDataProvider where Self.ItemType == Self.Model {
+public protocol ArrayProvider: class, CollectionDataProvider {
     
-    associatedtype ItemType
+    var items: [ModelCollection] { get set }
     
-    var items: [[ItemType]] { get set }
+    init(array: ModelCollection)
     
-    init(array: [[ItemType]])
-    
-    //func load()
+    func regroupIntoSections(given modelItems: ModelCollection) -> [ModelCollection]
     
 }
 
 public extension ArrayProvider {
+    
+    public func regroupIntoSections(given modelItems: [Model]) -> [[Model]] {
+        return [modelItems]
+    }
     
     // MARK: - CollectionDataProvider
     public func numberOfSections() -> Int {
@@ -85,7 +102,7 @@ public extension ArrayProvider {
         return items[section].count
     }
     
-    public func item(at indexPath: IndexPath) -> ItemType? {
+    public func item(at indexPath: IndexPath) -> Model? {
         guard indexPath.section >= 0 && indexPath.section < items.count &&
             indexPath.row >= 0 && indexPath.row < items[indexPath.section].count else {
                 return nil
@@ -93,7 +110,7 @@ public extension ArrayProvider {
         return items[indexPath.section][indexPath.row]
     }
     
-    public func updateItem(at indexPath: IndexPath, value: ItemType) {
+    public func updateItem(at indexPath: IndexPath, value: Model) {
         guard indexPath.section >= 0 && indexPath.section < items.count &&
             indexPath.row >= 0 && indexPath.row < items[indexPath.section].count else {
                 return
@@ -101,9 +118,8 @@ public extension ArrayProvider {
         items[indexPath.section][indexPath.row] = value
     }
     
-    public func reload(with items: [[ItemType]]) {
-        self.items = items
-        //self.delegate?.didUpdateItems()
+    public func reload(with items: ModelCollection) {
+        self.items = regroupIntoSections(given: items)
     }
     
 }

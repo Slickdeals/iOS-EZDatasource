@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 open class EZActionableCollectionViewCell<ActionDelegate>: UICollectionViewCell, EZCell {
     public typealias Model = EZEmptyModel
     public typealias Delegate = ActionDelegate
@@ -23,10 +24,10 @@ open class EZActionableCollectionViewCell<ActionDelegate>: UICollectionViewCell,
     public func setup(for model: Model?, at indexPath: IndexPath?, with actionDelegate: Delegate?) {
         self.model = nil
         self.delegate = actionDelegate
-        self.setup(with: actionDelegate)
+        self.setup(with: delegate, at: indexPath)
     }
     
-    open func setup(with actionDelegate: Delegate?) {}
+    open func setup(with actionDelegate: Delegate?, at indexPath: IndexPath?) {}
 }
 
 open class EZModelDrivenCollectionViewCell<ModelType>: UICollectionViewCell, EZCell {

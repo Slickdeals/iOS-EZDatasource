@@ -28,7 +28,10 @@ open class EZCollectionViewCell: UICollectionViewCell, EZCell {
     open func setup(for model: Model?, at indexPath: IndexPath?, with actionDelegate: Delegate?) {
         self.model = model
         self.delegate = actionDelegate
+        self.setup(at: indexPath)
     }
+    
+    open func setup(at indexPath: IndexPath?) {}
 }
 
 open class EZCollectionViewCellWrappingView<ViewType: UIView>: EZCollectionViewCell, EZCellWrappingView where ViewType: EZView {

@@ -9,12 +9,14 @@ public typealias CollectionItemSelectionHandlerType = (IndexPath) -> Void
 open class CollectionDataSource<Provider: CollectionDataProvider, Cell: UICollectionViewCell>: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
 where Cell: EZCell, Provider.Model == Cell.Model {
     
+    let subscriberID: String = UUID().uuidString
+    
     // MARK: - Delegates
     open var selectionDelegate: CollectionItemSelectionHandlerType?
     open var cellDelegate: Cell.Delegate? = nil
     
     // MARK: - Private Properties
-    public let provider: Provider
+    public var provider: Provider
     public let collectionView: UICollectionView
     
     // MARK: - Lifecycle
@@ -51,12 +53,7 @@ where Cell: EZCell, Provider.Model == Cell.Model {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.reuseIdentifier, for: indexPath) as? Cell
             else { return UICollectionViewCell() }
         let item = provider.item(at: indexPath)
-        if let item = item {
-            cell.setup(for: item, at: indexPath, with: cellDelegate)
-        }
-        else if cellDelegate != nil {
-            cell.setup(for: nil, at: nil, with: cellDelegate)
-        }
+        cell.setup(for: item, at: indexPath, with: cellDelegate)
         return cell
     }
     
@@ -69,5 +66,4 @@ where Cell: EZCell, Provider.Model == Cell.Model {
         selectionDelegate?(indexPath)
     }
 }
-
 

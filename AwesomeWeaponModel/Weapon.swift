@@ -7,30 +7,32 @@
 //
 
 import Foundation
+import EZDatasources
 
 public class Weapon {
     public var name: String
     public var type: Weapon.TypeOfWeapon
     public var level: Int
-    
+
     public init(weaponType: Weapon.TypeOfWeapon) {
         self.name = weaponType.rawValue
         self.type = weaponType
         self.level = 1
     }
-    
+
     public func upgrade() {
         level = level + 1
     }
 }
 
 public extension Weapon {
-    
+
     public enum TypeOfWeapon: String {
-        case axe, sword, bow, whip, mace, jenga, gunblade, flail, churros, giantEncyclopedia = "giant encyclopedia", rocketLauncher = "rocket launcher", hotSauce = "hot sauce"
-        
+        case axe, sword, bow, whip
+        //case axe, sword, bow, whip, mace, jenga, gunblade, flail, churros, giantEncyclopedia = "giant encyclopedia", rocketLauncher = "rocket launcher", hotSauce = "hot sauce"
+
         public static var allCases: [TypeOfWeapon] {
-            return [.axe, .sword, .bow, .whip, .mace, .jenga, .gunblade, .flail, .churros, .giantEncyclopedia, .rocketLauncher, .hotSauce]
+            return [.axe, .sword, .bow, .whip]
         }
     }
 }

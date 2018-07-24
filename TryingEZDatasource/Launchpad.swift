@@ -8,19 +8,33 @@
 
 import Foundation
 import UIKit
+import AwesomeWeaponModel
 
 class LaunchpadViewController: UIViewController {
     
-    @IBAction func didTapWeaponInfo(_ sender: UIButton) {
-        
+    @IBAction func didTapNotActionableNotModelDriven(_ sender: UIButton) {
+        App.sharedInstance.publish(event: App.Event.didSelectNoActionNoModelDatasource.rawValue)
     }
     
-    @IBAction func didTapRandomWeapons(_ sender: UIButton) {
-        
+    @IBAction func didTapActionableNotModelDriven(_ sender: UIButton) {
+        App.sharedInstance.publish(event: App.Event.didSelectActionNoModelDatasource.rawValue)
     }
     
-    @IBAction func didTapInteractiveWeapons(_ sender: UIButton) {
-        
+    @IBAction func didTapNotActionableModelDriven(_ sender: UIButton) {
+        App.sharedInstance.publish(event: App.Event.didSelectNoActionModelDatasource.rawValue)
+    }
+    
+    @IBAction func didTapActionableReactiveModelDriven(_ sender: UIButton) {
+        App.sharedInstance.publish(event: App.Event.didSelectActionAndActionReactiveDatasource.rawValue)
+    }
+    
+    @IBAction func didTapAllTheThings(_ sender: UIButton) {
+        App.sharedInstance.publish(event: App.Event.didSelectAllTheThings.rawValue)
+    }
+    
+    
+    @IBAction func didTapRefresh(_ sender: UIButton) {
+        WeaponStore.refreshWeapons()
     }
     
 }

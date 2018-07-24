@@ -9,9 +9,9 @@
 import Foundation
 
 public class WeaponSmith: WeaponInteractionHandler {
-    public func didRequestWeaponUpgrade(for weapon: Weapon) {
-        weapon.upgrade()
-        print(weapon.level)
+    
+    public func didRequestWeaponUpgrade(for weapon: Weapon, at indexPath: IndexPath?) {
+        WeaponStore.upgrade(weapon)
     }
     
     public init() {}

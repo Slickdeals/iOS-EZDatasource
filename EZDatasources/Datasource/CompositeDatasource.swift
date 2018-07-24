@@ -18,21 +18,39 @@ open class CompositeDataSource: NSObject, UICollectionViewDataSource, UICollecti
     
     public init(withSources sources: [SourceType]) {
         self.sources = sources
+        super.init()
     }
     
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return sources.count
+        return (0..<sources.count).reduce(0) { totalSections, datasourceIndex in
+            return sources[datasourceIndex].numberOfSections!(in: collectionView) + totalSections
+            //return datasource.numberOfSections!(in: collectionView) + totalSections
+        }
+
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return sources[section].collectionView(collectionView, numberOfItemsInSection: section)
+        let datasourceSection = section - sectionOffset(for: section, in: collectionView)
+        let itemsInSection = sources[section].collectionView(collectionView, numberOfItemsInSection: datasourceSection)
+        return itemsInSection
+//        return (0..<sources[section].numberOfSections!(in: collectionView)).reduce(0) { totalSections, section in
+//            return sources[section].collectionView(collectionView, numberOfItemsInSection: section) + totalSections
+//        }
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let itemSource = sources[indexPath.section]
-        let cell = itemSource.collectionView(collectionView, cellForItemAt: indexPath)
-        
-        return delegate?.configureCell(cell: cell, itemSource: itemSource, at: indexPath) ?? cell
+        // whatever section it gives me has to be the actual section for that collection
+        let datasourceSection = indexPath.section - sectionOffset(for: indexPath.section, in: collectionView)
+        let datasource = sources[indexPath.section]
+        let datasourceItemIndex = IndexPath(item: indexPath.item, section: datasourceSection)
+        let cell = datasource.collectionView(collectionView, cellForItemAt: datasourceItemIndex)
+        return cell
+    }
+    
+    func sectionOffset(for section: Int, in collectionView: UICollectionView) -> Int {
+        return (0..<section).reduce(0) { sections, previousSection in
+            return sources[previousSection].numberOfSections!(in: collectionView) + sections
+        }
     }
 }
 
