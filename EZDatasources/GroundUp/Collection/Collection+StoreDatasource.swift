@@ -1,16 +1,16 @@
 //
-//  CollectionDatasource+Reactive.swift
+//  Collection+StoreDatasource.swift
 //  EZDatasources
 //
-//  Created by Dominic Rodriquez on 7/17/18.
+//  Created by Dominic Rodriquez on 11/27/18.
 //  Copyright © 2018 Dominic Rodriquez. All rights reserved.
 //
 
 import Foundation
-import UIKit
 
-open class ReactiveCollectionDatasource<Store, Cell> {}
+//open class StoreDatasource<Store: ObservableReducer & CollectionInterface, Cell: UICollectionViewCell>: CollectionDataStore<Store, Cell>
 
+//
 //open class ReactiveCollectionDatasource<Store: ExplicitEventBroker & CollectionDataStore, Cell: UICollectionViewCell>: CollectionDataSource<Store, Cell>, ExplicitEventBroker
 //where Cell: EZCell, Store.Model == Cell.Model, Store.EventData == Store.Model {
 //

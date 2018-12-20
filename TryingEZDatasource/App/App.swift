@@ -8,67 +8,49 @@
 
 import Foundation
 import EZDatasources
+import AwesomeWeaponModel
 import UIKit
 
-class App: ExplicitEventBroker  {
+class App: Observable {
+    
+    typealias Element = Context
+    typealias Action = App.API
     
     static var sharedInstance = App()
+    static var provider = AppProvider()
     
-    typealias EventData = UICollectionViewDataSource & UICollectionViewDelegate
-    typealias EventDataCollection = [EventData]
+    var observers: [String : ObserverWrapper<Context>] = [:]
+    var value: Context = Context()
     
-    var eventsAvailable: [String] = Event.AllEvents
-    var basicSubscribedEvents: [String: [BasicSubscriberAction]] = [:]
-    var subscribedEvents: [String: [Subscriber]] = [:]
-    var subscribedCollectionEvents: [String: [CollectionSubscriber]] = [:]
-    
-    static var reactiveWeaponDatasource: ReactiveWeaponDatasource?
-    static var weaponInfoDatasource: WeaponInfoDatasource?
-    static var randomWeaponDatasourceWithRerollAction: RandomRerollableWeaponsDatasource?
-    static var randomWeaponDatasource: RandomWeaponsDatasource?
-    
-    static var weaponCollectionDatasource: WeaponCombinationDatasource = App.generateCombinedDatasource()
-    
-    static func generateCombinedDatasource() -> WeaponCombinationDatasource {
-        var datasources: [UICollectionViewDataSource & UICollectionViewDelegate] = []
-        if let randomWeaponDatasource = randomWeaponDatasource {
-            datasources.append(randomWeaponDatasource)
+    init() {
+        App.provider.startObserving { providerUpdate in
+            self.perform(action: App.API.updateDatasource(datasourceContext: providerUpdate.value))
         }
-        if let randomWeaponDatasourceWithRerollAction = randomWeaponDatasourceWithRerollAction {
-            datasources.append(randomWeaponDatasourceWithRerollAction)
-        }
-        if let weaponInfoDatasource = weaponInfoDatasource {
-            datasources.append(weaponInfoDatasource)
-        }
-        if let reactiveDatasource = reactiveWeaponDatasource {
-            datasources.append(reactiveDatasource)
-        }
-        return WeaponCombinationDatasource(withSources: datasources)
     }
-    
-    
-    public init() {}
-    
 }
 
 extension App {
+    struct Context {
+        var provider: AppProvider.Context = AppProvider.Context()
+    }
     
-    public enum Event: String {
-        case didSelectNoActionNoModelDatasource
-        case didSelectActionNoModelDatasource
-        case didSelectNoActionModelDatasource
-        case didSelectActionAndActionReactiveDatasource
-        case didSelectAllTheThings
-        
-        static var AllEvents: [String] {
-            let events: [App.Event] = [
-                .didSelectNoActionNoModelDatasource,
-                .didSelectActionNoModelDatasource,
-                .didSelectNoActionModelDatasource,
-                .didSelectActionAndActionReactiveDatasource,
-                .didSelectAllTheThings
-            ]
-            return events.map { $0.rawValue }
-        }
+    enum API {
+        case refresh
+        case updateDatasource(datasourceContext: AppProvider.Context)
     }
 }
+
+
+extension App {
+    func update(with action: App.Action, from oldValue: Context) -> Context {
+        var newValue = oldValue
+        switch action {
+        case .refresh: break
+        case .updateDatasource(let provider):
+            newValue.provider = provider
+        }
+        return newValue
+    }
+}
+
+

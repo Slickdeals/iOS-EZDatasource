@@ -40,7 +40,6 @@ import UIKit
     
     public var startingInsets: UIEdgeInsets {
         return UIEdgeInsets.init(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-        //return UIEdgeInsetsMake(10.0, 10.0, 10.0, 10.0)
     }
     
     public override init() {
@@ -79,7 +78,6 @@ import UIKit
         let insetValue = insets / 2
         let paddingInset = floor((containerWidth - requiredLineSpace) / 2)
         let sectionInsets = UIEdgeInsets.init(top:insetValue, left: insetValue + paddingInset, bottom: insetValue, right: paddingInset + insetValue)
-        //let sectionInsets = UIEdgeInsetsMake(insetValue, insetValue + paddingInset, insetValue, paddingInset + insetValue)
         
         guard containerWidth >= requiredLineSpace else {
             return calculateRequiredInsets(for: containerWidth,

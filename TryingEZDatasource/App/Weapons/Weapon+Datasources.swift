@@ -11,15 +11,14 @@ import UIKit
 import EZDatasources
 import AwesomeWeaponModel
 
+// Why do I have to have a collectionView
+
 /*************************************
     Step 2. Various ways you might create datasources
  *************************************/
 
-// This one's model driven, but that's it- no actions
-class WeaponInfoDatasource: EZCollectionArrayDatasource<WeaponInfoCell> {}
-
 // an example where it's not model driven so I just override to provide it's content count
-class RandomRerollableWeaponsDatasource: EZCollectionArrayDatasource<RandomRerollableWeaponCell> {
+class RandomRerollableWeaponsDatasource: StoreArrayDatasource<RandomRerollableWeaponCell> {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -28,7 +27,7 @@ class RandomRerollableWeaponsDatasource: EZCollectionArrayDatasource<RandomRerol
     }
 }
 
-class RandomWeaponsDatasource: EZCollectionArrayDatasource<RandomWeaponCell> {
+class RandomWeaponsDatasource: StoreArrayDatasource<RandomWeaponCell> {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -37,8 +36,8 @@ class RandomWeaponsDatasource: EZCollectionArrayDatasource<RandomWeaponCell> {
     }
 }
 
-// Actionable, ModelDriven, and reactive (reactive datasources need you to supply the provider beacuse the datasource internally subscribes to that provider)
-class ReactiveWeaponDatasource: EZCollectionArrayReactiveDatasource<CustomWeaponProvider, WeaponCell> {}
+// Actionable, ModelDriven, and reactive (reactive datasources need you to supply the store beacuse the datasource internally subscribes to that store)
+class UpgradableWeaponDatasource: StoreArrayDatasource<WeaponCell> {}
 
 class WeaponCombinationDatasource: CompositeDataSource {}
 

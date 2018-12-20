@@ -1,5 +1,5 @@
 //
-//  WeaponHandler.swift
+//  Weapon+Interactor.swift
 //  AwesomeWeaponModel
 //
 //  Created by Dominic Rodriquez on 7/11/18.
@@ -8,14 +8,26 @@
 
 import Foundation
 
-public protocol WeaponInteractionHandler {
-    func didRequestWeaponUpgrade(for weapon: Weapon, at indexPath: IndexPath?)
-    func didRerollWeapon(at indexPath: IndexPath?, to weapon: Weapon)
+//case selectDatasource
+
+public struct WeaponSmith: WeaponInteractor {
+    public init() {}
 }
 
-public extension WeaponInteractionHandler {
+public protocol WeaponInteractor {
+    func didRequestWeaponUpgrade(for weapon: Weapon, at indexPath: IndexPath?)
+    func didRerollWeapon(at indexPath: IndexPath?, to weapon: Weapon)
+    init()
+}
+
+public extension WeaponInteractor {
+    
     public func didRerollWeapon(at indexPath: IndexPath?, to weapon: Weapon) {
         guard let index = indexPath else { return }
         WeaponStore.AvailableWeapons[index.item] = weapon
+    }
+    
+    public func didRequestWeaponUpgrade(for weapon: Weapon, at indexPath: IndexPath?) {
+        WeaponStore.upgrade(weapon)
     }
 }

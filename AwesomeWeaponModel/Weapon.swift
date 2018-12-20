@@ -10,6 +10,7 @@ import Foundation
 import EZDatasources
 
 public class Weapon {
+    
     public var name: String
     public var type: Weapon.TypeOfWeapon
     public var level: Int

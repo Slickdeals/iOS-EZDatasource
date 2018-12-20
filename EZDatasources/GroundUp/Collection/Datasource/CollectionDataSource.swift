@@ -6,8 +6,8 @@ import UIKit
 
 public typealias CollectionItemSelectionHandlerType = (IndexPath) -> Void
 
-open class CollectionDataSource<Provider: CollectionDataProvider, Cell: UICollectionViewCell>: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
-where Cell: EZCell, Provider.Model == Cell.Model {
+open class CollectionDataSource<Store: CollectionInterface, Cell: UICollectionViewCell>: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
+where Cell: EZCell, Store.CollectionElement == Cell.Model {
     
     let subscriberID: String = UUID().uuidString
     
@@ -16,43 +16,45 @@ where Cell: EZCell, Provider.Model == Cell.Model {
     open var cellDelegate: Cell.Delegate? = nil
     
     // MARK: - Private Properties
-    public var provider: Provider
-    public let collectionView: UICollectionView
+    public var store: Store
+    public var collectionView: UICollectionView?
     
     // MARK: - Lifecycle
-    public init(collectionView: UICollectionView, provider: Provider, cellDelegate: Cell.Delegate? = nil) {
+    public init(collectionView: UICollectionView? = nil, store: Store, cellDelegate: Cell.Delegate? = nil) {
         self.collectionView = collectionView
-        self.provider = provider
-        self.cellDelegate = cellDelegate
+        self.store = store
         super.init()
-        setup()
+        guard let validCollectionView = collectionView else { return }
+        drive(contentsOf: validCollectionView, handleCellInteractionWith: cellDelegate)
     }
     
-    public func setup() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
+    public func drive(contentsOf targetCollectionView: UICollectionView, handleCellInteractionWith delegate: Cell.Delegate? = nil) {
+        cellDelegate = delegate
+        collectionView = targetCollectionView
+        targetCollectionView.dataSource = self
+        targetCollectionView.delegate = self
         if let cellNib = Cell.nib, Cell.registerNib {
-            collectionView.register(cellNib.nibFile, forCellWithReuseIdentifier: Cell.reuseIdentifier)
+            targetCollectionView.register(cellNib.nibFile, forCellWithReuseIdentifier: Cell.reuseIdentifier)
         }
         else {
             guard Cell.storyboardIdentifier == nil else { return }
-            collectionView.register(Cell.self, forCellWithReuseIdentifier: Cell.reuseIdentifier)
+            targetCollectionView.register(Cell.self, forCellWithReuseIdentifier: Cell.reuseIdentifier)
         }
     }
     
     // MARK: - UICollectionViewDataSource
     open func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return provider.numberOfSections()
+        return store.numberOfSections()
     }
     
     open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return provider.numberOfItems(in: section)
+        return store.numberOfItems(in: section)
     }
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.reuseIdentifier, for: indexPath) as? Cell
             else { return UICollectionViewCell() }
-        let item = provider.item(at: indexPath)
+        let item = store.item(at: indexPath)
         cell.setup(for: item, at: indexPath, with: cellDelegate)
         return cell
     }
@@ -66,4 +68,3 @@ where Cell: EZCell, Provider.Model == Cell.Model {
         selectionDelegate?(indexPath)
     }
 }
-

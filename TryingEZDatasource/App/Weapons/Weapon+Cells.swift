@@ -41,15 +41,14 @@ class RandomWeaponCell: EZCollectionViewCell {
     }
 }
 
-class RandomRerollableWeaponCell: EZActionableCollectionViewCell<WeaponInteractionHandler> {
+class RandomRerollableWeaponCell: EZActionableCollectionViewCell<WeaponInteractor> {
     
     var randomWeapon: Weapon = WeaponStore.randomWeapon
     var indexPath: IndexPath? = nil
     lazy var refreshWeaponButton: UIButton = { return ViewBuilder.buildButton() }()
     lazy var weaponLabel: UILabel = { return ViewBuilder.buildLevel(size: self.contentView.bounds.size) }()
     
-    override func setup(with actionDelegate: WeaponInteractionHandler?, at indexPath: IndexPath?) {
-        print("setting up")
+    override func setup(with actionDelegate: WeaponInteractor?, at indexPath: IndexPath?) {
         self.indexPath = indexPath
         super.setup(with: actionDelegate, at: indexPath)
         contentView.backgroundColor = UIColor.lightGray
@@ -73,7 +72,6 @@ class WeaponInfoCell: EZModelDrivenCollectionViewCell<Weapon> {
     lazy var levelLabel: UILabel = { return ViewBuilder.buildLevel(size: self.contentView.bounds.size) }()
 
     override func setup(for model: Model?, at indexPath: IndexPath?) {
-        print("setting up")
         super.setup(for: model, at: indexPath)
         contentView.backgroundColor = UIColor.cyan
         if let model = model { levelLabel.text = "\(model.name): \(model.level)" }
@@ -82,13 +80,13 @@ class WeaponInfoCell: EZModelDrivenCollectionViewCell<Weapon> {
     }
 }
 
-class WeaponCell: EZActionableModelDrivenCollectionViewCell<Weapon, WeaponInteractionHandler> {
+class WeaponCell: EZActionableModelDrivenCollectionViewCell<Weapon, WeaponInteractor> {
 
     lazy var upgradeButton: UIButton = { return ViewBuilder.buildButton() }()
     lazy var levelLabel: UILabel = { return ViewBuilder.buildLevel(size: self.contentView.bounds.size) }()
     var indexPath: IndexPath? = nil
     
-    override func setup(for model: Weapon?, at indexPath: IndexPath?, with actionDelegate: WeaponInteractionHandler?) {
+    override func setup(for model: Weapon?, at indexPath: IndexPath?, with actionDelegate: WeaponInteractor?) {
         super.setup(for: model, at: indexPath, with: actionDelegate)
         self.indexPath = indexPath
         contentView.backgroundColor = UIColor.orange
