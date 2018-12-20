@@ -16,8 +16,6 @@
 		1A16C36420F66C1A00616F51 /* EZDatasources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A16C35C20F66C1A00616F51 /* EZDatasources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A16C38520F66D7200616F51 /* CellNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C36E20F66D7100616F51 /* CellNib.swift */; };
 		1A16C38620F66D7200616F51 /* CollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37020F66D7100616F51 /* CollectionDataSource.swift */; };
-		1A16C38720F66D7200616F51 /* ArrayDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37220F66D7100616F51 /* ArrayDataStore.swift */; };
-		1A16C38820F66D7200616F51 /* CollectionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37320F66D7100616F51 /* CollectionDataStore.swift */; };
 		1A16C38A20F66D7200616F51 /* StoreArrayDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37520F66D7100616F51 /* StoreArrayDatasource.swift */; };
 		1A16C38B20F66D7200616F51 /* CompositeDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37620F66D7100616F51 /* CompositeDatasource.swift */; };
 		1A16C38D20F66D7200616F51 /* ViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C37920F66D7200616F51 /* ViewBuilder.swift */; };
@@ -36,15 +34,12 @@
 		1A16C3B220F6700E00616F51 /* Weapon+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B120F6700E00616F51 /* Weapon+Interactor.swift */; };
 		1A16C3B420F6701B00616F51 /* Weapon+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B320F6701B00616F51 /* Weapon+Store.swift */; };
 		1A16C3B720F67DF800616F51 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B620F67DF800616F51 /* App.swift */; };
-		1A34312C20FE4F4900F4D6D9 /* ArrayDataStore+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A34312B20FE4F4900F4D6D9 /* ArrayDataStore+Reactive.swift */; };
-		1A34312E20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A34312D20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift */; };
 		1A47400A2162C0FE003D75F0 /* Reducible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4740092162C0FE003D75F0 /* Reducible.swift */; };
 		1A47400F2162C251003D75F0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A47400E2162C251003D75F0 /* Observable.swift */; };
 		1A7D0AA821ACBC4C0044011F /* Observable+Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D0AA721ACBC4C0044011F /* Observable+Event.swift */; };
 		1A7D0AAC21ACBCC50044011F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D0AAB21ACBCC50044011F /* Store.swift */; };
 		1A7D0AB321ADF1BA0044011F /* Reducer+Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D0AB221ADF1BA0044011F /* Reducer+Observable.swift */; };
 		1A7D0AB821ADFFD40044011F /* Collection+Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D0AB721ADFFD40044011F /* Collection+Interface.swift */; };
-		1A7D0ABE21AE01AF0044011F /* Collection+StoreDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D0ABD21AE01AF0044011F /* Collection+StoreDatasource.swift */; };
 		1A7D0AC321AE0A520044011F /* ArrayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D0AC221AE0A520044011F /* ArrayStore.swift */; };
 		1A7D0AC521AE0A5B0044011F /* ArrayStore+Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D0AC421AE0A5B0044011F /* ArrayStore+Reducer.swift */; };
 		1A7D0AC721AE0A670044011F /* ArrayStore+CollectionInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D0AC621AE0A670044011F /* ArrayStore+CollectionInterface.swift */; };
@@ -52,8 +47,6 @@
 		1A7D0ACC21B20CBB0044011F /* App+Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7D0ACB21B20CBB0044011F /* App+Provider.swift */; };
 		1AB2077E20F6BBD000FF66D0 /* Weapon+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2077D20F6BBD000FF66D0 /* Weapon+Cells.swift */; };
 		1AB2078020F6BBDD00FF66D0 /* Weapon+Datasources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2077F20F6BBDD00FF66D0 /* Weapon+Datasources.swift */; };
-		1AC723D920F939BD0001C70F /* GenericEventBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC723D820F939BD0001C70F /* GenericEventBroker.swift */; };
-		1AC723DB20F942330001C70F /* CollectionArrayDatasource+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC723DA20F942330001C70F /* CollectionArrayDatasource+Reactive.swift */; };
 		1AC723DD20F9472D0001C70F /* EZDatasources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A16C35C20F66C1A00616F51 /* EZDatasources.framework */; };
 		1AD5238D20F6C365006749D7 /* Weapon+Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5238C20F6C365006749D7 /* Weapon+Scenes.swift */; };
 		1AD5239120F6C47F006749D7 /* Weapon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AD5239020F6C47F006749D7 /* Weapon.storyboard */; };
@@ -105,8 +98,6 @@
 		1A16C35F20F66C1A00616F51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A16C36E20F66D7100616F51 /* CellNib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellNib.swift; sourceTree = "<group>"; };
 		1A16C37020F66D7100616F51 /* CollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDataSource.swift; sourceTree = "<group>"; };
-		1A16C37220F66D7100616F51 /* ArrayDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataStore.swift; sourceTree = "<group>"; };
-		1A16C37320F66D7100616F51 /* CollectionDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDataStore.swift; sourceTree = "<group>"; };
 		1A16C37520F66D7100616F51 /* StoreArrayDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreArrayDatasource.swift; sourceTree = "<group>"; };
 		1A16C37620F66D7100616F51 /* CompositeDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositeDatasource.swift; sourceTree = "<group>"; };
 		1A16C37920F66D7200616F51 /* ViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewBuilder.swift; sourceTree = "<group>"; };
@@ -126,15 +117,12 @@
 		1A16C3B120F6700E00616F51 /* Weapon+Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Interactor.swift"; sourceTree = "<group>"; };
 		1A16C3B320F6701B00616F51 /* Weapon+Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Store.swift"; sourceTree = "<group>"; };
 		1A16C3B620F67DF800616F51 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		1A34312B20FE4F4900F4D6D9 /* ArrayDataStore+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrayDataStore+Reactive.swift"; sourceTree = "<group>"; };
-		1A34312D20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionDatasource+Reactive.swift"; sourceTree = "<group>"; };
 		1A4740092162C0FE003D75F0 /* Reducible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducible.swift; sourceTree = "<group>"; };
 		1A47400E2162C251003D75F0 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		1A7D0AA721ACBC4C0044011F /* Observable+Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Event.swift"; sourceTree = "<group>"; };
 		1A7D0AAB21ACBCC50044011F /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		1A7D0AB221ADF1BA0044011F /* Reducer+Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reducer+Observable.swift"; sourceTree = "<group>"; };
 		1A7D0AB721ADFFD40044011F /* Collection+Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Interface.swift"; sourceTree = "<group>"; };
-		1A7D0ABD21AE01AF0044011F /* Collection+StoreDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+StoreDatasource.swift"; sourceTree = "<group>"; };
 		1A7D0AC221AE0A520044011F /* ArrayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayStore.swift; sourceTree = "<group>"; };
 		1A7D0AC421AE0A5B0044011F /* ArrayStore+Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrayStore+Reducer.swift"; sourceTree = "<group>"; };
 		1A7D0AC621AE0A670044011F /* ArrayStore+CollectionInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArrayStore+CollectionInterface.swift"; sourceTree = "<group>"; };
@@ -142,8 +130,6 @@
 		1A7D0ACB21B20CBB0044011F /* App+Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Provider.swift"; sourceTree = "<group>"; };
 		1AB2077D20F6BBD000FF66D0 /* Weapon+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Cells.swift"; sourceTree = "<group>"; };
 		1AB2077F20F6BBDD00FF66D0 /* Weapon+Datasources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Datasources.swift"; sourceTree = "<group>"; };
-		1AC723D820F939BD0001C70F /* GenericEventBroker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericEventBroker.swift; sourceTree = "<group>"; };
-		1AC723DA20F942330001C70F /* CollectionArrayDatasource+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionArrayDatasource+Reactive.swift"; sourceTree = "<group>"; };
 		1AD5238C20F6C365006749D7 /* Weapon+Scenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Scenes.swift"; sourceTree = "<group>"; };
 		1AD5239020F6C47F006749D7 /* Weapon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Weapon.storyboard; sourceTree = "<group>"; };
 		1AD5239220F6C4EF006749D7 /* Launchpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launchpad.swift; sourceTree = "<group>"; };
@@ -213,12 +199,11 @@
 		1A16C35D20F66C1A00616F51 /* EZDatasources */ = {
 			isa = PBXGroup;
 			children = (
-				1A47400B2162C22B003D75F0 /* GroundUp */,
-				1AFDB0D521079FB300169BC7 /* Stores */,
-				1A16C36F20F66D7100616F51 /* Datasource */,
-				1AFDB0D621079FC600169BC7 /* Events */,
-				1AFDB0D721079FD600169BC7 /* ReusableViews */,
-				1A16C36D20F66D7100616F51 /* Data Structures */,
+				1A7D0ABA21AE00430044011F /* UI */,
+				1A7D0AB621ADFFC00044011F /* Collection */,
+				1A7D0AAA21ACBCB40044011F /* Store */,
+				1A7D0AA921ACBC8E0044011F /* StateReduction */,
+				1A47400D2162C23A003D75F0 /* Observing */,
 				1A16C35E20F66C1A00616F51 /* EZDatasources.h */,
 				1A16C35F20F66C1A00616F51 /* Info.plist */,
 			);
@@ -232,22 +217,6 @@
 				1A16C37920F66D7200616F51 /* ViewBuilder.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		1A16C36D20F66D7100616F51 /* Data Structures */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Data Structures";
-			sourceTree = "<group>";
-		};
-		1A16C36F20F66D7100616F51 /* Datasource */ = {
-			isa = PBXGroup;
-			children = (
-				1A34312D20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift */,
-				1AFDB0DA2107A02100169BC7 /* Array */,
-			);
-			path = Datasource;
 			sourceTree = "<group>";
 		};
 		1A16C39620F66D7A00616F51 /* Cells */ = {
@@ -286,18 +255,6 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		1A47400B2162C22B003D75F0 /* GroundUp */ = {
-			isa = PBXGroup;
-			children = (
-				1A7D0ABA21AE00430044011F /* UI */,
-				1A7D0AB621ADFFC00044011F /* Collection */,
-				1A7D0AAA21ACBCB40044011F /* Store */,
-				1A7D0AA921ACBC8E0044011F /* StateReduction */,
-				1A47400D2162C23A003D75F0 /* Observing */,
-			);
-			path = GroundUp;
-			sourceTree = "<group>";
-		};
 		1A47400D2162C23A003D75F0 /* Observing */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,7 +290,6 @@
 			children = (
 				1A7D0AB921AE002A0044011F /* Datasource */,
 				1A7D0AB721ADFFD40044011F /* Collection+Interface.swift */,
-				1A7D0ABD21AE01AF0044011F /* Collection+StoreDatasource.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -394,47 +350,6 @@
 				1A16C36B20F66C7600616F51 /* Helpers */,
 			);
 			path = Support;
-			sourceTree = "<group>";
-		};
-		1AFDB0D521079FB300169BC7 /* Stores */ = {
-			isa = PBXGroup;
-			children = (
-				1A16C37320F66D7100616F51 /* CollectionDataStore.swift */,
-				1AFDB0D92107A01800169BC7 /* Array */,
-			);
-			path = Stores;
-			sourceTree = "<group>";
-		};
-		1AFDB0D621079FC600169BC7 /* Events */ = {
-			isa = PBXGroup;
-			children = (
-				1AC723D820F939BD0001C70F /* GenericEventBroker.swift */,
-			);
-			path = Events;
-			sourceTree = "<group>";
-		};
-		1AFDB0D721079FD600169BC7 /* ReusableViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ReusableViews;
-			sourceTree = "<group>";
-		};
-		1AFDB0D92107A01800169BC7 /* Array */ = {
-			isa = PBXGroup;
-			children = (
-				1A16C37220F66D7100616F51 /* ArrayDataStore.swift */,
-				1A34312B20FE4F4900F4D6D9 /* ArrayDataStore+Reactive.swift */,
-			);
-			path = Array;
-			sourceTree = "<group>";
-		};
-		1AFDB0DA2107A02100169BC7 /* Array */ = {
-			isa = PBXGroup;
-			children = (
-				1AC723DA20F942330001C70F /* CollectionArrayDatasource+Reactive.swift */,
-			);
-			path = Array;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -604,35 +519,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC723DB20F942330001C70F /* CollectionArrayDatasource+Reactive.swift in Sources */,
 				1A7D0AB821ADFFD40044011F /* Collection+Interface.swift in Sources */,
-				1A16C38820F66D7200616F51 /* CollectionDataStore.swift in Sources */,
 				1A7D0AC321AE0A520044011F /* ArrayStore.swift in Sources */,
 				1A47400A2162C0FE003D75F0 /* Reducible.swift in Sources */,
 				1AFDB0DC2107A3D300169BC7 /* CollectionViewVerticalFlowLayout.swift in Sources */,
 				1A16C39520F66D7200616F51 /* ReusableView.swift in Sources */,
-				1A7D0ABE21AE01AF0044011F /* Collection+StoreDatasource.swift in Sources */,
 				1A16C38620F66D7200616F51 /* CollectionDataSource.swift in Sources */,
 				1A7D0AA821ACBC4C0044011F /* Observable+Event.swift in Sources */,
 				1A7D0AAC21ACBCC50044011F /* Store.swift in Sources */,
 				1A16C38E20F66D7200616F51 /* ConfigurableCollectionReusableView.swift in Sources */,
 				1A16C38A20F66D7200616F51 /* StoreArrayDatasource.swift in Sources */,
 				1A7D0AC721AE0A670044011F /* ArrayStore+CollectionInterface.swift in Sources */,
-				1A34312E20FE591700F4D6D9 /* CollectionDatasource+Reactive.swift in Sources */,
 				1A16C39320F66D7200616F51 /* ReusableCell.swift in Sources */,
 				1A7D0AB321ADF1BA0044011F /* Reducer+Observable.swift in Sources */,
 				1A16C39820F66DA700616F51 /* EZCollectionViewCell.swift in Sources */,
-				1A16C38720F66D7200616F51 /* ArrayDataStore.swift in Sources */,
 				1A16C39020F66D7200616F51 /* EZCell.swift in Sources */,
 				1A16C39120F66D7200616F51 /* ConfigurableCell+DefaultConfiguration.swift in Sources */,
 				1A16C38B20F66D7200616F51 /* CompositeDatasource.swift in Sources */,
-				1AC723D920F939BD0001C70F /* GenericEventBroker.swift in Sources */,
 				1A47400F2162C251003D75F0 /* Observable.swift in Sources */,
 				1A16C38D20F66D7200616F51 /* ViewBuilder.swift in Sources */,
 				1A16C39220F66D7200616F51 /* ConfigurableCell.swift in Sources */,
 				1A7D0AC521AE0A5B0044011F /* ArrayStore+Reducer.swift in Sources */,
 				1A16C39420F66D7200616F51 /* ConfigurableView.swift in Sources */,
-				1A34312C20FE4F4900F4D6D9 /* ArrayDataStore+Reactive.swift in Sources */,
 				1A16C38520F66D7200616F51 /* CellNib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
