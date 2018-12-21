@@ -5,16 +5,13 @@
 import Foundation
 import UIKit
 
-public protocol CompositeDataSourceDelegate {
-    func configureCell<SourceType: UICollectionViewDataSource & UICollectionViewDelegate>(cell: UICollectionViewCell, itemSource: SourceType, at indexPath: IndexPath) -> UICollectionViewCell
-}
+public protocol DatasourceGroup {}
 
 open class CompositeDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
     public typealias SourceType = UICollectionViewDataSource & UICollectionViewDelegate
     
     public var sources: [SourceType]
-    public var delegate: CompositeDataSourceDelegate?
     
     public init(withSources sources: [SourceType]) {
         self.sources = sources
@@ -25,7 +22,6 @@ open class CompositeDataSource: NSObject, UICollectionViewDataSource, UICollecti
         return (0..<sources.count).reduce(0) { totalSections, datasourceIndex in
             return sources[datasourceIndex].numberOfSections!(in: collectionView) + totalSections
         }
-
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

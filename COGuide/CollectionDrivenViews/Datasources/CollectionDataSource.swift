@@ -7,29 +7,29 @@ import UIKit
 public typealias CollectionItemSelectionHandlerType = (IndexPath) -> Void
 
 open class CollectionDataSource<Store: CollectionInterface, Cell: UICollectionViewCell>: NSObject, UICollectionViewDataSource, UICollectionViewDelegate
-where Cell: EZCell, Store.CollectionElement == Cell.Model {
+where Cell: GuidedCell, Store.CollectionElement == Cell.Model {
     
     let subscriberID: String = UUID().uuidString
     
     // MARK: - Delegates
     open var selectionDelegate: CollectionItemSelectionHandlerType?
-    open var cellDelegate: Cell.Delegate? = nil
+    open var cellDelegate: Cell.Interactor? = nil
     
     // MARK: - Private Properties
     public var store: Store
-    public var collectionView: UICollectionView?
+    public var collectionView: UICollectionView? 
     
-    // MARK: - Lifecycle
-    public init(collectionView: UICollectionView? = nil, store: Store, cellDelegate: Cell.Delegate? = nil) {
-        self.collectionView = collectionView
+    // MARK: - Initializer
+    public init(backedBy store: Store, for collectionView: UICollectionView? = nil, cellCommunicatesWith delegate: Cell.Interactor? = nil) {
         self.store = store
         super.init()
         guard let validCollectionView = collectionView else { return }
-        drive(contentsOf: validCollectionView, handleCellInteractionWith: cellDelegate)
+        drive(contentsOf: validCollectionView, cellCommunicatesWith: cellDelegate)
     }
     
-    public func drive(contentsOf targetCollectionView: UICollectionView, handleCellInteractionWith delegate: Cell.Delegate? = nil) {
-        cellDelegate = delegate
+    // MARK: - Drive collectionViewData
+    public func drive(contentsOf targetCollectionView: UICollectionView, cellCommunicatesWith interactionDelegate: Cell.Interactor? = nil) {
+        cellDelegate = interactionDelegate
         collectionView = targetCollectionView
         targetCollectionView.dataSource = self
         targetCollectionView.delegate = self
@@ -55,7 +55,7 @@ where Cell: EZCell, Store.CollectionElement == Cell.Model {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.reuseIdentifier, for: indexPath) as? Cell
             else { return UICollectionViewCell() }
         let item = store.item(at: indexPath)
-        cell.setup(for: item, at: indexPath, with: cellDelegate)
+        cell.configure(with: item, at: indexPath, communicatesWith: cellDelegate)
         return cell
     }
     

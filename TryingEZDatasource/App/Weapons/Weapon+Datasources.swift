@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import EZDatasources
+import COGuide
 import AwesomeWeaponModel
 
 // Why do I have to have a collectionView

@@ -1,9 +1,9 @@
 //
 //  CellNib.swift
-//  SlickdealsCore
+//  COGuide
 //
-//  Created by Dominic Rodriquez on 6/22/18.
-//  Copyright © 2018 Slickdeals, LLC. All rights reserved.
+//  Created by Dominic Rodriquez on 12/20/18.
+//  Copyright © 2018 Dominic Rodriquez. All rights reserved.
 //
 
 import Foundation

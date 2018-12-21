@@ -8,32 +8,32 @@
 
 import Foundation
 import UIKit
-import EZDatasources
+import COGuide
 import AwesomeWeaponModel
 
 /*************************************
  Three different cells, each of which is from one of the 3 possible subclasses
  Those three are
  
- - EZActionableCollectionViewCell<Delegate>
+ - GuidedActionableCollectionViewCell<Interactor>
  cell that can received some user action and would want to communicate that to a delegate/handler
  content is not driven by any model
  
- - EZModelDrivenCollectionViewCell<Model>
+ - GuidedModelDrivenCollectionViewCell<Model>
  cell that's driven by model, but has no actionable content within it
  
- - EZActionableModelDrivenCollectionViewCell<Model, Delegate>
+ - GuidedActionableModelDrivenCollectionViewCell<Model, Interactor>
  cell that combines both of the other cases
  
  *************************************/
-class RandomWeaponCell: EZCollectionViewCell {
+class RandomWeaponCell: GuidedCollectionViewCell {
     
     var randomWeapon: Weapon = WeaponStore.randomWeapon
     var indexPath: IndexPath? = nil
     lazy var weaponLabel: UILabel = { return ViewBuilder.buildLevel(size: self.contentView.bounds.size) }()
     
-    override func setup(at indexPath: IndexPath?) {
-        super.setup(at: indexPath)
+    override func configure(at position: IndexPath?) {
+        super.configure(at: position)
         contentView.backgroundColor = UIColor.green
         weaponLabel.text = "\(randomWeapon.name)"
         guard !subviews.contains(weaponLabel) else { return }
@@ -41,16 +41,16 @@ class RandomWeaponCell: EZCollectionViewCell {
     }
 }
 
-class RandomRerollableWeaponCell: EZActionableCollectionViewCell<WeaponInteractor> {
+class RandomRerollableWeaponCell: GuidedActionableCollectionViewCell<WeaponInteractor> {
     
     var randomWeapon: Weapon = WeaponStore.randomWeapon
     var indexPath: IndexPath? = nil
     lazy var refreshWeaponButton: UIButton = { return ViewBuilder.buildButton() }()
     lazy var weaponLabel: UILabel = { return ViewBuilder.buildLevel(size: self.contentView.bounds.size) }()
     
-    override func setup(with actionDelegate: WeaponInteractor?, at indexPath: IndexPath?) {
-        self.indexPath = indexPath
-        super.setup(with: actionDelegate, at: indexPath)
+    override func configure(at position: IndexPath?, communicatesWith interactionDelegate: WeaponInteractor?) {
+        self.indexPath = position
+        super.configure(at: position, communicatesWith: interactionDelegate)
         contentView.backgroundColor = UIColor.lightGray
         weaponLabel.text = "\(randomWeapon.name)"
         guard !subviews.contains(refreshWeaponButton) else { return }
@@ -62,17 +62,17 @@ class RandomRerollableWeaponCell: EZActionableCollectionViewCell<WeaponInteracto
     
     @objc func tappedRerollWeapon() {
         randomWeapon = WeaponStore.randomWeapon
-        setup(with: delegate, at: indexPath)
-        delegate?.didRerollWeapon(at: indexPath, to: randomWeapon)
+        configure(at: indexPath, communicatesWith: interactor)
+        interactor?.didRerollWeapon(at: indexPath, to: randomWeapon)
     }
 }
 
-class WeaponInfoCell: EZModelDrivenCollectionViewCell<Weapon> {
+class WeaponInfoCell: GuidedModelDrivenCollectionViewCell<Weapon> {
 
     lazy var levelLabel: UILabel = { return ViewBuilder.buildLevel(size: self.contentView.bounds.size) }()
 
-    override func setup(for model: Model?, at indexPath: IndexPath?) {
-        super.setup(for: model, at: indexPath)
+    override func configure(with model: Model?, at position: IndexPath?) {
+        super.configure(with: model, at: position)
         contentView.backgroundColor = UIColor.cyan
         if let model = model { levelLabel.text = "\(model.name): \(model.level)" }
         guard !subviews.contains(levelLabel) else { return }
@@ -80,15 +80,15 @@ class WeaponInfoCell: EZModelDrivenCollectionViewCell<Weapon> {
     }
 }
 
-class WeaponCell: EZActionableModelDrivenCollectionViewCell<Weapon, WeaponInteractor> {
+class WeaponCell: GuidedActionableModelDrivenCollectionViewCell<Weapon, WeaponInteractor> {
 
     lazy var upgradeButton: UIButton = { return ViewBuilder.buildButton() }()
     lazy var levelLabel: UILabel = { return ViewBuilder.buildLevel(size: self.contentView.bounds.size) }()
     var indexPath: IndexPath? = nil
     
-    override func setup(for model: Weapon?, at indexPath: IndexPath?, with actionDelegate: WeaponInteractor?) {
-        super.setup(for: model, at: indexPath, with: actionDelegate)
-        self.indexPath = indexPath
+    override func configure(with model: Weapon?, at position: IndexPath?, communicatesWith interactionDelegate: WeaponInteractor?) {
+        super.configure(with: model, at: position, communicatesWith: interactionDelegate)
+        self.indexPath = position
         contentView.backgroundColor = UIColor.orange
         if let model = model { levelLabel.text = "\(model.name): \(model.level)" }
         guard !subviews.contains(upgradeButton) else { return }
@@ -100,6 +100,6 @@ class WeaponCell: EZActionableModelDrivenCollectionViewCell<Weapon, WeaponIntera
 
     @objc func tappedUpgrade() {
         guard let weapon = model else { return }
-        delegate?.didRequestWeaponUpgrade(for: weapon, at: indexPath!)
+        interactor?.didRequestWeaponUpgrade(for: weapon, at: indexPath!)
     }
 }

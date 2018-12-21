@@ -8,8 +8,6 @@
 
 import Foundation
 
-//case selectDatasource
-
 public struct WeaponSmith: WeaponInteractor {
     public init() {}
 }

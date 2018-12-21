@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import EZDatasources
+import COGuide
 
 public class Weapon {
     

@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import EZDatasources
+import COGuide
 import AwesomeWeaponModel
 
 class AppProvider: Observable {
@@ -95,13 +95,13 @@ extension AppProvider {
             switch selectedWeaponList {
             case .descriptionsOnly:
                 // This one's model driven, but that's it- no actions
-                AppProvider.weaponInfoDatasource = AppProvider.weaponInfoDatasource ?? WeaponInfoCell.makeDatasource(for: collectionView, with: WeaponStore.weaponStore)
+                AppProvider.weaponInfoDatasource = AppProvider.weaponInfoDatasource ?? WeaponInfoCell.makeDatasource(backedBy: WeaponStore.weaponStore, for: collectionView)
             case .upgradable:
-                AppProvider.upgradableWeaponDatasource = AppProvider.upgradableWeaponDatasource ?? WeaponCell.makeDatasource(for: collectionView, with: WeaponStore.weaponStore, cellDelegate: WeaponSmith())
+                AppProvider.upgradableWeaponDatasource = AppProvider.upgradableWeaponDatasource ?? WeaponCell.makeDatasource(backedBy: WeaponStore.weaponStore, for: collectionView, cellCommunicatesWith: WeaponSmith())
             case .rerollable:
-                AppProvider.randomWeaponDatasourceWithRerollAction = AppProvider.randomWeaponDatasourceWithRerollAction ?? RandomRerollableWeaponsDatasource(collectionView: collectionView, array: [[]])
+                AppProvider.randomWeaponDatasourceWithRerollAction = AppProvider.randomWeaponDatasourceWithRerollAction ?? RandomRerollableWeaponsDatasource(backedBy: [[]], for: collectionView)
             case .completelyRandom:
-                AppProvider.randomWeaponDatasource = AppProvider.randomWeaponDatasource ?? RandomWeaponsDatasource(collectionView: collectionView, array: [[]], cellDelegate: nil)
+                AppProvider.randomWeaponDatasource = AppProvider.randomWeaponDatasource ?? RandomWeaponsDatasource(backedBy: [[]], for: collectionView, cellCommunicatesWith: nil)
             case .mixed:
                 AppProvider.mixedWeaponsDatasource = AppProvider.generateCombinedDatasource()
             }
