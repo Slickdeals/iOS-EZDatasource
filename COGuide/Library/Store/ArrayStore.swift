@@ -45,7 +45,7 @@ public class ArrayStore<Item>: Observable {
     public typealias Action = Context.Action
     public typealias Model = ArrayStore<Item>.Context
     
-    public var observers: [String: ObserverWrapper<Context>] = [:]
+    public var observers: [String: ObserverWrapper<Context, Action>] = [:]
     
     public var value: Context = Context()
     
@@ -55,5 +55,19 @@ public class ArrayStore<Item>: Observable {
     
     public convenience init(items: [Item]) {
         self.init(items: [items])
+    }
+    
+    public func perform(action: Action) {
+        
+        // assign the value to be whatever the updated value is, which is supplied by the update function
+        let valueBeforeUpdate = value
+        value = update(with: action, from: valueBeforeUpdate)
+        
+        print("observers: perform - \(observers.count)")
+        
+        // now that we have the new value and the old value, notify each observer
+        observers.values.forEach { observer in
+            observer.observableDidChange(from: valueBeforeUpdate, to: value, wasTriggeredBy: action)
+        }
     }
 }

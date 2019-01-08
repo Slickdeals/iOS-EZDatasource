@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class GuidedCollectionViewCellCase<ViewType: UIView>: GuidedCollectionViewCell, GuidedCellCase where ViewType: GuidedComponent {
+open class GuidedCollectionViewCellCase<ViewType: UIView>: GuidedEmptyCollectionViewCell, GuidedCellCase where ViewType: GuidedComponent {
     public typealias View = ViewType
     public var viewConstrainedToCell: View?
 }

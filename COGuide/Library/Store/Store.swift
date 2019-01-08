@@ -132,7 +132,7 @@ public class Store<Model: Reducible>: ObservableReducer {
     /**
         This is the collection of observers currently watching for changes
      */
-    public var observers: [String: ObserverWrapper<Model>] = [:]
+    public var observers: [String: ObserverWrapper<Model, Action>] = [:]
     
     /**
      Initializes the store of the specified type with the initial value you provide

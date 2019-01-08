@@ -11,19 +11,22 @@ import Foundation
 /**
     This is the value you receive as an observer anytime an update is received from a store updating
  */
-public struct Update<Element> {
+public struct Update<Element, Action> {
     
     // Value of the store prior to it updating
     public let oldValue: Element
     
     // New value of the store after the update
     public let value: Element
+    
+    // action that was taken
+    public let triggedBy: Action
 }
 
 /**
     This is the value you receive as an observer anytime an update is received from a store updating
  */
-public struct ObserverWrapper<Element> {
+public struct ObserverWrapper<Element, Action> {
     
     /**
      This is the closure property that gets invoked anytime the store is updated.
@@ -34,7 +37,7 @@ public struct ObserverWrapper<Element> {
                This instance of `Update<Element>` will contain the oldValue, and the newValue of the store following the update.
      
      */
-    public var closure: (Update<Element>) -> Void
+    public var closure: (Update<Element, Action>) -> Void
     
     /**
      This method is invoked for each observer subscribed to the store after the store updates.
@@ -44,7 +47,7 @@ public struct ObserverWrapper<Element> {
      - newValue: new value of the store following an update
      - oldValue: previous value of the store before updating
      */
-    public func observableDidChange(from oldValue: Element, to newValue: Element) {
-        closure(Update(oldValue: oldValue, value: newValue))
+    public func observableDidChange(from oldValue: Element, to newValue: Element, wasTriggeredBy action: Action) {
+        closure(Update(oldValue: oldValue, value: newValue, triggedBy: action))
     }
 }

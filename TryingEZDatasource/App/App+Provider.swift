@@ -16,7 +16,7 @@ class AppProvider: Observable {
     typealias Element = AppProvider.Context
     typealias Action = Event
     
-    var observers: [String : ObserverWrapper<AppProvider.Context>] = [:]
+    var observers: [String : ObserverWrapper<AppProvider.Context, Action>] = [:]
     var value = AppProvider.Context()
     
     /*
@@ -56,8 +56,6 @@ class AppProvider: Observable {
         
     }
 }
-
-
 
 extension AppProvider {
     

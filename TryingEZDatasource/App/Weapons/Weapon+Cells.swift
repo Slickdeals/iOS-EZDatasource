@@ -26,7 +26,7 @@ import AwesomeWeaponModel
  cell that combines both of the other cases
  
  *************************************/
-class RandomWeaponCell: GuidedCollectionViewCell {
+class RandomWeaponCell: GuidedEmptyCollectionViewCell {
     
     var randomWeapon: Weapon = WeaponStore.randomWeapon
     var indexPath: IndexPath? = nil

@@ -18,6 +18,10 @@
 		1A16C3B220F6700E00616F51 /* Weapon+Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B120F6700E00616F51 /* Weapon+Interactor.swift */; };
 		1A16C3B420F6701B00616F51 /* Weapon+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B320F6701B00616F51 /* Weapon+Store.swift */; };
 		1A16C3B720F67DF800616F51 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A16C3B620F67DF800616F51 /* App.swift */; };
+		1A28FEFF21DEB6CC00222493 /* ContainerCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FEFE21DEB6CC00222493 /* ContainerCells.swift */; };
+		1A28FF0121DEBAC200222493 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FF0021DEBAC200222493 /* Deal.swift */; };
+		1A28FF0421DEBADB00222493 /* Deal+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FF0321DEBADB00222493 /* Deal+Cells.swift */; };
+		1A28FF0921E41C1E00222493 /* SomeSingleCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A28FF0821E41C1E00222493 /* SomeSingleCollectionVC.swift */; };
 		1A6DCE9D21CC4A96002C5FC0 /* COGuide.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A6DCE9B21CC4A96002C5FC0 /* COGuide.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1A6DCEA021CC4A96002C5FC0 /* COGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6DCE9921CC4A95002C5FC0 /* COGuide.framework */; };
 		1A6DCEA121CC4A96002C5FC0 /* COGuide.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6DCE9921CC4A95002C5FC0 /* COGuide.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -108,6 +112,10 @@
 		1A16C3B120F6700E00616F51 /* Weapon+Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Interactor.swift"; sourceTree = "<group>"; };
 		1A16C3B320F6701B00616F51 /* Weapon+Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Weapon+Store.swift"; sourceTree = "<group>"; };
 		1A16C3B620F67DF800616F51 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		1A28FEFE21DEB6CC00222493 /* ContainerCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerCells.swift; sourceTree = "<group>"; };
+		1A28FF0021DEBAC200222493 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
+		1A28FF0321DEBADB00222493 /* Deal+Cells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deal+Cells.swift"; sourceTree = "<group>"; };
+		1A28FF0821E41C1E00222493 /* SomeSingleCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeSingleCollectionVC.swift; sourceTree = "<group>"; };
 		1A4740092162C0FE003D75F0 /* Reducible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducible.swift; sourceTree = "<group>"; };
 		1A47400E2162C251003D75F0 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		1A6DCE9921CC4A95002C5FC0 /* COGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = COGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +202,7 @@
 		1A16C34420F66BE700616F51 /* TryingEZDatasource */ = {
 			isa = PBXGroup;
 			children = (
+				1A28FF0521E41B9400222493 /* Fresh Start */,
 				1AD5239420F6CA18006749D7 /* Support */,
 				1A16C3B820F67E3200616F51 /* App */,
 				1AD5239220F6C4EF006749D7 /* Launchpad.swift */,
@@ -228,11 +237,30 @@
 		1A16C3B820F67E3200616F51 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				1A28FF0221DEBAC800222493 /* Deals */,
 				1A16C3B620F67DF800616F51 /* App.swift */,
 				1A7D0ACB21B20CBB0044011F /* App+Provider.swift */,
 				1AB2077C20F6BBC100FF66D0 /* Weapons */,
+				1A28FEFE21DEB6CC00222493 /* ContainerCells.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		1A28FF0221DEBAC800222493 /* Deals */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FF0021DEBAC200222493 /* Deal.swift */,
+				1A28FF0321DEBADB00222493 /* Deal+Cells.swift */,
+			);
+			path = Deals;
+			sourceTree = "<group>";
+		};
+		1A28FF0521E41B9400222493 /* Fresh Start */ = {
+			isa = PBXGroup;
+			children = (
+				1A28FF0821E41C1E00222493 /* SomeSingleCollectionVC.swift */,
+			);
+			path = "Fresh Start";
 			sourceTree = "<group>";
 		};
 		1A6DCE9A21CC4A96002C5FC0 /* COGuide */ = {
@@ -241,7 +269,7 @@
 				1A6DCEA621CC4AB5002C5FC0 /* COG.swift */,
 				1A6DCED121CC5908002C5FC0 /* Library */,
 				1A6DCEAB21CC4C76002C5FC0 /* ViewComponents */,
-				1A6DCEAD21CC4D46002C5FC0 /* CollectionDrivenViews */,
+				1A6DCEAD21CC4D46002C5FC0 /* Collections */,
 				1A6DCE9B21CC4A96002C5FC0 /* COGuide.h */,
 				1A6DCE9C21CC4A96002C5FC0 /* Info.plist */,
 				1A6DCEB721CC50F7002C5FC0 /* README.md */,
@@ -285,7 +313,7 @@
 			path = TableViews;
 			sourceTree = "<group>";
 		};
-		1A6DCEAD21CC4D46002C5FC0 /* CollectionDrivenViews */ = {
+		1A6DCEAD21CC4D46002C5FC0 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
 				1A7D0AB721ADFFD40044011F /* Collection+Interface.swift */,
@@ -294,7 +322,7 @@
 				1A6DCEA821CC4B00002C5FC0 /* CollectionViews */,
 				1A6DCEAC21CC4D18002C5FC0 /* TableViews */,
 			);
-			path = CollectionDrivenViews;
+			path = Collections;
 			sourceTree = "<group>";
 		};
 		1A6DCEAE21CC4DD7002C5FC0 /* Store */ = {
@@ -548,14 +576,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AD5239320F6C4EF006749D7 /* Launchpad.swift in Sources */,
+				1A28FEFF21DEB6CC00222493 /* ContainerCells.swift in Sources */,
+				1A28FF0121DEBAC200222493 /* Deal.swift in Sources */,
 				1A16C3B720F67DF800616F51 /* App.swift in Sources */,
 				1AB2077E20F6BBD000FF66D0 /* Weapon+Cells.swift in Sources */,
 				1A7D0ACC21B20CBB0044011F /* App+Provider.swift in Sources */,
 				1AD5238D20F6C365006749D7 /* Weapon+Scenes.swift in Sources */,
 				1AB2078020F6BBDD00FF66D0 /* Weapon+Datasources.swift in Sources */,
+				1A28FF0921E41C1E00222493 /* SomeSingleCollectionVC.swift in Sources */,
 				1A6DCEDF21CC68C8002C5FC0 /* CollectionViewVerticalFlowLayout.swift in Sources */,
 				1A6DCEDE21CC68C3002C5FC0 /* ViewBuilder.swift in Sources */,
 				1A16C34620F66BE700616F51 /* AppDelegate.swift in Sources */,
+				1A28FF0421DEBADB00222493 /* Deal+Cells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

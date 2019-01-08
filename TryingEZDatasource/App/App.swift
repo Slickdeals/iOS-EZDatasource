@@ -19,7 +19,7 @@ class App: Observable {
     static var sharedInstance = App()
     static var provider = AppProvider()
     
-    var observers: [String : ObserverWrapper<Context>] = [:]
+    var observers: [String : ObserverWrapper<Context, Action>] = [:]
     var value: Context = Context()
     
     init() {

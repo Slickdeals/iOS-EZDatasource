@@ -11,7 +11,7 @@ open class StoreArrayCollectionDatasource<Model, Cell: UICollectionViewCell>: Co
     public typealias Action = ArrayStore<Model>.Action
     public typealias Element = ArrayStore<Model>.Element
     
-    public var observers: [String: ObserverWrapper<Element>] {
+    public var observers: [String: ObserverWrapper<Element, Action>] {
         get {
             return store.observers
         }

@@ -93,7 +93,7 @@ public protocol Observable: class {
     // It's an empty closure that they supply that provides them with a single parameter
     // which is the updated value of the entity being observer along with its oldValue in case
     // they want to reference that
-    typealias ObservableUpdateClosure = (Update<Element>) -> Void
+    typealias ObservableUpdateClosure = (Update<Element, Action>) -> Void
     
     // current value of the entity being observed
     var value: Element { get set }
@@ -101,7 +101,7 @@ public protocol Observable: class {
     // all of the subscribed observers that will be notified when the entity being observed is updated
     // each observer is stored with a key that is generated and passed back to the subscriber.
     // That subscriber is then responsible for supplying that key again if they want to unsubscribe
-    var observers: [String: ObserverWrapper<Element>] { get set }
+    var observers: [String: ObserverWrapper<Element, Action>] { get set }
     
     /**
      This method takes the closure provided and holds onto it so that every time an update occurs,
@@ -162,7 +162,7 @@ public extension Observable {
         let observerKey = UUID().uuidString
         
         // set the value of that key to a wrapper for the closure
-        observers[observerKey] = ObserverWrapper<Element>(closure: closure)
+        observers[observerKey] = ObserverWrapper<Element, Action>(closure: closure)
         
         // return the key to the observer so that they can unsubscribe when needed
         return observerKey
@@ -184,7 +184,7 @@ public extension Observable {
         
         // now that we have the new value and the old value, notify each observer
         observers.values.forEach { observer in
-            observer.observableDidChange(from: valueBeforeUpdate, to: value)
+            observer.observableDidChange(from: valueBeforeUpdate, to: value, wasTriggeredBy: action)
         }
     }
 }

@@ -9,23 +9,57 @@
 import Foundation
 import UIKit
 
-open class GuidedCollectionViewCell: UICollectionViewCell, GuidedCell {
-    public typealias Model = CellEmptyModel
-    public typealias Interactor = CellEmptyActionDelegate
+public protocol CellGuide: GuidedCell {
+    func didUpdateModel(with updatedModel: Model)
+    func didUpdateInteractionDelegate(with interactionDelegate: Interactor)
+}
+
+public extension CellGuide {
+    func didUpdateInteractionDelegate(with interactionDelegate: Interactor) {}
+}
+
+open class GuidedCollectionViewCell<ModelType, ActionDelegate>: UICollectionViewCell, GuidedCell {
+    public typealias Model = ModelType
+    public typealias Interactor = ActionDelegate
+    
+    public typealias CellModel = Model
+    public typealias CellInteractor = Interactor
+    
     open var model: Model?
     open var interactor: Interactor?
+    open var indexPath: IndexPath?
     
     open override func prepareForReuse() {
         model = nil
         interactor = nil
+        indexPath = nil
     }
     
     open func configure(with model: Model?, at position: IndexPath?, communicatesWith interactionDelegate: Interactor?) {
         self.model = model
         self.interactor = interactionDelegate
+        self.indexPath = position
+    }
+}
+
+
+open class GuidedEmptyCollectionViewCell: UICollectionViewCell, GuidedCell {
+    public typealias Model = CellEmptyModel
+    public typealias Interactor = CellEmptyActionDelegate
+    open var model: Model?
+    open var interactor: Interactor?
+
+    open override func prepareForReuse() {
+        model = nil
+        interactor = nil
+    }
+
+    open func configure(with model: Model?, at position: IndexPath?, communicatesWith interactionDelegate: Interactor?) {
+        self.model = model
+        self.interactor = interactionDelegate
         self.configure(at: position)
     }
-    
+
     open func configure(at position: IndexPath?) {}
 }
 
