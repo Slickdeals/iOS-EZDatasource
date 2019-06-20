@@ -15,7 +15,7 @@ public extension Observable where Element: Reducible, Self.Action == Element.Act
     typealias ActionType = Element.Action
     
     // For reducers, the updated value will always be its reduce method.
-    public func update(with action: Action, from oldValue: Element) -> Element {
+    func update(with action: Action, from oldValue: Element) -> Element {
         var newValue = oldValue
         return newValue.reduced(by: action, from: oldValue)
     }

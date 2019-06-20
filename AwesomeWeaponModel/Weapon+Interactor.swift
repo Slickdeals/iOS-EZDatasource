@@ -20,12 +20,12 @@ public protocol WeaponInteractor {
 
 public extension WeaponInteractor {
     
-    public func didRerollWeapon(at indexPath: IndexPath?, to weapon: Weapon) {
+    func didRerollWeapon(at indexPath: IndexPath?, to weapon: Weapon) {
         guard let index = indexPath else { return }
         WeaponStore.AvailableWeapons[index.item] = weapon
     }
     
-    public func didRequestWeaponUpgrade(for weapon: Weapon, at indexPath: IndexPath?) {
+    func didRequestWeaponUpgrade(for weapon: Weapon, at indexPath: IndexPath?) {
         WeaponStore.upgrade(weapon)
     }
 }

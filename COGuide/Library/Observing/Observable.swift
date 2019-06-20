@@ -136,13 +136,13 @@ public protocol Observable: class {
      - action: the payload for this update, which will be forwarded to the update method in order to get the new value for the entity being observed
      
      */
-    func perform(action: Action)
+    func publish(action: Action)
     
     /**
      This is the method that mutates the entity being observed
      
      - parameters:
-     - action: This is the action that was supplied when the `perform` method was called, and should be used to determine how to update the entity being observed
+     - action: This is the action that was supplied when the `publish` method was called, and should be used to determine how to update the entity being observed
      - oldValue: this is the value of the entity being observed "right now". It hasn't been updated yet. That's your job- right here.
                  Make a copy of this locally, mutate it to be whatever it should be given the action, then return that value
      
@@ -157,7 +157,7 @@ public protocol Observable: class {
 public extension Observable {
     
     @discardableResult
-    public func startObserving(from closure: @escaping ObservableUpdateClosure) -> String {
+    func startObserving(from closure: @escaping ObservableUpdateClosure) -> String {
         // generate a new unique string to store the closure with
         let observerKey = UUID().uuidString
         
@@ -168,19 +168,19 @@ public extension Observable {
         return observerKey
     }
     
-    public func stopObserving(with key: String) {
+    func stopObserving(with key: String) {
         // remove the observer stored under the value of the key provided
         // this key should match the key supplied when initially subscribing
         observers.removeValue(forKey: key)
     }
     
-    public func perform(action: Action) {
+    func publish(action: Action) {
         
         // assign the value to be whatever the updated value is, which is supplied by the update function
         let valueBeforeUpdate = value
         value = update(with: action, from: valueBeforeUpdate)
         
-        print("observers: perform - \(observers.count)")
+        print("observers: publish - \(observers.count)")
         
         // now that we have the new value and the old value, notify each observer
         observers.values.forEach { observer in

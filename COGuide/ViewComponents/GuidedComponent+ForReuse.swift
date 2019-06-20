@@ -14,5 +14,5 @@ public protocol GuidedForReuse: class {
 }
 
 public extension GuidedForReuse {
-    public static var reuseIdentifier: String { return String(describing: self) }
+    static var reuseIdentifier: String { return String(describing: self) }
 }

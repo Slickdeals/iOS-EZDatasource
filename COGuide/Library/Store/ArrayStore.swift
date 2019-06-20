@@ -53,21 +53,20 @@ public class ArrayStore<Item>: Observable {
         self.items = items
     }
     
-    public convenience init(items: [Item]) {
-        self.init(items: [items])
-    }
-    
-    public func perform(action: Action) {
+    public func publish(action: Action) {
         
         // assign the value to be whatever the updated value is, which is supplied by the update function
         let valueBeforeUpdate = value
         value = update(with: action, from: valueBeforeUpdate)
-        
-        print("observers: perform - \(observers.count)")
+        print("observers: publish - \(observers.count)")
         
         // now that we have the new value and the old value, notify each observer
         observers.values.forEach { observer in
             observer.observableDidChange(from: valueBeforeUpdate, to: value, wasTriggeredBy: action)
         }
+    }
+    
+    required public init(items: [Item]) {
+        self.items = [items]
     }
 }

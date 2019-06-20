@@ -11,7 +11,7 @@ import UIKit
 
 public extension UICollectionView {
     
-    public enum ReusableViewType: String {
+    enum ReusableViewType: String {
         case header
         case footer
         

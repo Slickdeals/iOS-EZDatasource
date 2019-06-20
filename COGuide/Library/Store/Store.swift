@@ -14,7 +14,7 @@ import Foundation
  
  - Making changes through actions:
     You are required to define the `Action` type used by the store for actions.
-    To update the store, you call the `.perform` method and provide an instance of the action
+    To update the store, you call the `.publish` method and provide an instance of the action
  
  - Single point of mutation:
     You are required to supply the method that reduces the store from one state to another.

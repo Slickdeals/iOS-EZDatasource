@@ -28,7 +28,7 @@ public class Weapon {
 
 public extension Weapon {
 
-    public enum TypeOfWeapon: String {
+    enum TypeOfWeapon: String {
         case axe, sword, bow, whip
         //case axe, sword, bow, whip, mace, jenga, gunblade, flail, churros, giantEncyclopedia = "giant encyclopedia", rocketLauncher = "rocket launcher", hotSauce = "hot sauce"
 

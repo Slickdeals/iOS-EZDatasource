@@ -34,7 +34,7 @@ public class WeaponStore {
 
     public static var AvailableWeapons: [Weapon] = Weapon.TypeOfWeapon.allCases.map { Weapon(weaponType: $0) } {
         didSet {
-            weaponStore.perform(action: ArrayStore<Weapon>.Update.updateAll(with: [WeaponStore.AvailableWeapons]))
+            weaponStore.publish(action: ArrayStore<Weapon>.Update.updateAll(with: [WeaponStore.AvailableWeapons]))
         }
     }
 
@@ -44,10 +44,10 @@ public class WeaponStore {
     }
 
     public static func upgrade(_ weapon: Weapon) {
-        guard let weaponIndex = AvailableWeapons.index(where: { $0.name == weapon.name })
+        guard let weaponIndex = AvailableWeapons.firstIndex(where: { $0.name == weapon.name })
         else { return }
         AvailableWeapons[weaponIndex].upgrade()
-        weaponStore.perform(action: ArrayStore<Weapon>.Update.updateItem(at: IndexPath(item: weaponIndex, section: 0), withItem: weapon))
+        weaponStore.publish(action: ArrayStore<Weapon>.Update.updateItem(at: IndexPath(item: weaponIndex, section: 0), withItem: weapon))
     }
     
     public static func refreshWeapons() {

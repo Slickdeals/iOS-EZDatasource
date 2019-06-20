@@ -24,7 +24,7 @@ class App: Observable {
     
     init() {
         App.provider.startObserving { providerUpdate in
-            self.perform(action: App.API.updateDatasource(datasourceContext: providerUpdate.value))
+            self.publish(action: App.API.updateDatasource(datasourceContext: providerUpdate.value))
         }
     }
 }

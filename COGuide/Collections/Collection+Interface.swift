@@ -11,6 +11,9 @@ import Foundation
 public protocol CollectionInterface {
     
     associatedtype CollectionElement
+    associatedtype CollectionType: Collection where CollectionType.Element == CollectionElement
+    
+    init(items: CollectionType)
     
     func numberOfSections() -> Int
     func numberOfItems(in section: Int) -> Int

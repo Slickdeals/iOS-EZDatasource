@@ -16,7 +16,7 @@ open class GuidedCollectionViewCellCase<ViewType: UIView>: GuidedEmptyCollection
 
 public extension GuidedCellCase where Self: UICollectionViewCell, View: GuidedComponent, Model == View.Model, Interactor == View.Interactor {
     
-    public func configure(with model: Model?, at position: IndexPath?, communicatesWith interactionDelegate: Interactor?) {
+    func configure(with model: Model?, at position: IndexPath?, communicatesWith interactionDelegate: Interactor?) {
         defer { updateStyles() }
         guard viewConstrainedToCell == nil else {
             viewConstrainedToCell?.configure(with: model, at: position, communicatesWith: interactionDelegate)
@@ -26,7 +26,7 @@ public extension GuidedCellCase where Self: UICollectionViewCell, View: GuidedCo
         configure(byWrapping: view, with: model, at: position, communicatesWith: interactionDelegate)
     }
     
-    public func configure<View: UIView>(byWrapping view: View, with model: Model?, at position: IndexPath?, communicatesWith interactionDelegate: Interactor?) where View: GuidedComponent, View.Model == Model, View.Interactor == Interactor {
+    func configure<View: UIView>(byWrapping view: View, with model: Model?, at position: IndexPath?, communicatesWith interactionDelegate: Interactor?) where View: GuidedComponent, View.Model == Model, View.Interactor == Interactor {
         view.model = model
         view.interactor = interactionDelegate
         attachCell(to: view)
@@ -44,7 +44,7 @@ public extension GuidedCellCase where Self: UICollectionViewCell, View: GuidedCo
             ])
     }
     
-    public func updateStyles() {
+    func updateStyles() {
         contentView.backgroundColor = UIColor.clear
         contentView.layer.borderColor = UIColor.clear.cgColor
         layer.borderColor = UIColor.clear.cgColor
@@ -55,7 +55,7 @@ public extension GuidedCellCase where Self: UICollectionViewCell, View: GuidedCo
 }
 
 public extension GuidedCellCase where Self: GuidedComponent {
-    public var model: View.Model? {
+    var model: View.Model? {
         get {
             return viewConstrainedToCell?.model
         }
@@ -63,7 +63,7 @@ public extension GuidedCellCase where Self: GuidedComponent {
             viewConstrainedToCell?.model = newValue
         }
     }
-    public var delegate: View.Interactor? {
+    var delegate: View.Interactor? {
         get {
             return viewConstrainedToCell?.interactor
         }

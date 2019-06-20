@@ -9,4 +9,5 @@
 import Foundation
 import UIKit
 
-public protocol GuidedCell: GuidedComponent, GuidedForNib {}
+public protocol GuidedCell: GuidedComponent, GuidedForNib {
+}

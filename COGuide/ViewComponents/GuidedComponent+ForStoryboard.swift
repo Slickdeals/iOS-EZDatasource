@@ -23,6 +23,6 @@ public protocol GuidedForNib: GuidedForReuse, GuidedForStoryboard {
 }
 
 public extension GuidedForNib {
-    public static var registerNib: Bool { return false }
-    public static var nib: CellNib? { return CellNib(nibName: reuseIdentifier) }
+    static var registerNib: Bool { return false }
+    static var nib: CellNib? { return CellNib(nibName: reuseIdentifier) }
 }

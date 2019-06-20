@@ -48,7 +48,7 @@ extension GuidedLayoutModel {
 //                return blockCellDS
 //            default: return nil
 //            }
-//            //return StoreArrayDatasource<Cell>(backedBy: store, for: collectionView, cellCommunicatesWith: interactionDelegate)
+//            //return StoreArrayDatasource<Cell>(backedBy: store, toDriveCollectionView: collectionView, cellCommunicatesWith: interactionDelegate)
 //    }
     
 //    public func makeDatasource<Cell: GuidedCell>(
@@ -57,7 +57,7 @@ extension GuidedLayoutModel {
 //        for collectionView: UICollectionView? = nil,
 //        cellCommunicatesWith interactionDelegate: Cell.Interactor? = nil) -> StoreArrayDatasource<Cell>
 //        where Cell.Model == Self {
-//            return StoreArrayDatasource<Cell>(backedBy: store, for: collectionView, cellCommunicatesWith: interactionDelegate)
+//            return StoreArrayDatasource<Cell>(backedBy: store, toDriveCollectionView: collectionView, cellCommunicatesWith: interactionDelegate)
 //    }
 }
 

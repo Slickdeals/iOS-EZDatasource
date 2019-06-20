@@ -10,6 +10,8 @@ import Foundation
 
 extension ArrayStore: CollectionInterface {
     
+    public typealias CollectionType = [Item]
+    
     public func numberOfSections() -> Int {
         return items.count
     }
@@ -29,7 +31,7 @@ extension ArrayStore: CollectionInterface {
     }
     
     public func updateItem(at indexPath: IndexPath, value: Item) {
-        
+        items[indexPath.section][indexPath.row] = value
     }
-        
+    
 }

@@ -93,13 +93,14 @@ extension AppProvider {
             switch selectedWeaponList {
             case .descriptionsOnly:
                 // This one's model driven, but that's it- no actions
-                AppProvider.weaponInfoDatasource = AppProvider.weaponInfoDatasource ?? WeaponInfoCell.makeDatasource(backedBy: WeaponStore.weaponStore, for: collectionView)
+                //WeaponInfoCell.makeData
+                AppProvider.weaponInfoDatasource = AppProvider.weaponInfoDatasource ?? WeaponInfoCell.makeDatasource(backedBy: WeaponStore.weaponStore, toDriveCollectionView: collectionView)
             case .upgradable:
-                AppProvider.upgradableWeaponDatasource = AppProvider.upgradableWeaponDatasource ?? WeaponCell.makeDatasource(backedBy: WeaponStore.weaponStore, for: collectionView, cellCommunicatesWith: WeaponSmith())
+                AppProvider.upgradableWeaponDatasource = AppProvider.upgradableWeaponDatasource ?? WeaponCell.makeDatasource(backedBy: WeaponStore.weaponStore, toDriveCollectionView: collectionView, cellCommunicatesWith: WeaponSmith())
             case .rerollable:
-                AppProvider.randomWeaponDatasourceWithRerollAction = AppProvider.randomWeaponDatasourceWithRerollAction ?? RandomRerollableWeaponsDatasource(backedBy: [[]], for: collectionView)
+                AppProvider.randomWeaponDatasourceWithRerollAction = AppProvider.randomWeaponDatasourceWithRerollAction ?? RandomRerollableWeaponsDatasource(backedBy: [[]], toDriveCollectionView: collectionView)
             case .completelyRandom:
-                AppProvider.randomWeaponDatasource = AppProvider.randomWeaponDatasource ?? RandomWeaponsDatasource(backedBy: [[]], for: collectionView, cellCommunicatesWith: nil)
+                AppProvider.randomWeaponDatasource = AppProvider.randomWeaponDatasource ?? RandomWeaponsDatasource(backedBy: [[]], toDriveCollectionView: collectionView, cellCommunicatesWith: nil)
             case .mixed:
                 AppProvider.mixedWeaponsDatasource = AppProvider.generateCombinedDatasource()
             }

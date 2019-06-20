@@ -18,6 +18,30 @@ public extension CellGuide {
     func didUpdateInteractionDelegate(with interactionDelegate: Interactor) {}
 }
 
+open class GuidedTableViewCell<ModelType, ActionDelegate>: UITableViewCell, GuidedCell {
+    public typealias Model = ModelType
+    public typealias Interactor = ActionDelegate
+    
+    public typealias CellModel = Model
+    public typealias CellInteractor = Interactor
+    
+    open var model: Model?
+    open var interactor: Interactor?
+    open var indexPath: IndexPath?
+    
+    open override func prepareForReuse() {
+        model = nil
+        interactor = nil
+        indexPath = nil
+    }
+    
+    open func configure(with model: Model?, at position: IndexPath?, communicatesWith interactionDelegate: Interactor?) {
+        self.model = model
+        self.interactor = interactionDelegate
+        self.indexPath = position
+    }
+}
+
 open class GuidedCollectionViewCell<ModelType, ActionDelegate>: UICollectionViewCell, GuidedCell {
     public typealias Model = ModelType
     public typealias Interactor = ActionDelegate
@@ -122,5 +146,5 @@ open class GuidedActionableModelDrivenCollectionViewCell<ModelType, ActionDelega
 
 public protocol CellEmptyActionDelegate { var oops: Bool { get  } }
 public protocol CellEmptyModel { var oops: Bool { get } }
-public extension CellEmptyActionDelegate { public var oops: Bool { return false } }
-public extension CellEmptyModel { public var oops: Bool { return false } }
+public extension CellEmptyActionDelegate { var oops: Bool { return false } }
+public extension CellEmptyModel { var oops: Bool { return false } }
